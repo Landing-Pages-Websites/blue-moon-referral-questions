@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medicare-Approved Geriatric Counseling Services | Blue Moon Senior Counseling</title>
-    <meta name="description" content="Licensed therapists for seniors providing Medicare-approved geriatric counseling. Specialized therapy for depression, anxiety, grief, and mental health challenges of aging.">
+    <title>Geriatric Teletherapy Online | Blue Moon Senior Counseling</title>
+    <meta name="description" content="Senior counseling from the comfort of your home. Tele-therapy services covered by Medicare. Licensed therapists specializing in geriatric mental health. Phone, video, or chat sessions available nationwide.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/01/BM_Plain.png">
 
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Medicare-Approved Geriatric Counseling Services | Blue Moon Senior Counseling">
-    <meta property="og:description" content="Licensed therapists for seniors providing Medicare-approved geriatric counseling. Specialized therapy for depression, anxiety, grief, and mental health challenges of aging.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Geriatric Teletherapy Online | Blue Moon Senior Counseling">
+    <meta property="og:description" content="Senior counseling from the comfort of your home. Tele-therapy services covered by Medicare.">
     <meta property="og:image" content="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/01/BM_Plain.png">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://info.bluemoonseniorconsulting.com">
 
-    <!-- MegaTag Tracking -->
+    <!-- MegaTag Tracking (from existing subdomain LP) -->
     <script>
     window.MEGA_TAG_CONFIG = {
         siteKey: 'sk_mlsetqe4_p92m9vmpzii',
@@ -26,1485 +25,993 @@
     window.TRACKING_API_ENDPOINT = 'https://events-api.gomega.ai';
     </script>
     <script src="https://cdn.gomega.ai/scripts/optimizer.min.js" async></script>
-    <!-- End MegaTag Tracking -->
 
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager (from existing subdomain LP) -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KX4B622D');</script>
-    <!-- End Google Tag Manager -->
 
-    <!-- CTM Call Tracking -->
+    <!-- CTM Call Tracking (from existing subdomain LP) -->
     <script src="https://572388.tctm.co/t.js" async></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=Lato:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* ========================================
-           CSS CUSTOM PROPERTIES (Token System)
-        ======================================== */
         :root {
-            /* Colors */
-            --primary: #191354;
-            --accent: #D97706;
-            --accent-dark: #B45309;
-            --bg: #FFFFFF;
-            --text: #191354;
-            --surface: #F9FAFB;
-            --border: rgba(25, 19, 84, 0.1);
-            --star: #FBBF24;
+            --navy: #121042;
+            --navy-light: #191354;
+            --teal: #009CC9;
+            --teal-dark: #007DA1;
+            --gold: #EAC839;
+            --gold-dark: #D4B52E;
+            --light-bg: #F0F5FF;
+            --white: #FFFFFF;
+            --text-dark: #2D2D2D;
+            --text-light: #6B7280;
+            --text-on-dark: rgba(255,255,255,0.9);
+            --error: #dc2626;
             --success: #16a34a;
-
-            /* Typography */
-            --font-display: 'Playfair Display', serif;
-            --font-body: 'Lato', sans-serif;
-
-            /* Spacing */
             --radius: 8px;
-
-            /* Shadows */
-            --shadow-sm: 0 2px 8px rgba(25, 19, 84, 0.08);
-            --shadow-md: 0 4px 16px rgba(25, 19, 84, 0.12);
-            --shadow-lg: 0 8px 32px rgba(25, 19, 84, 0.16);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.18);
+            --font: 'Open Sans', sans-serif;
         }
-
-        /* ========================================
-           RESET & BASE STYLES
-        ======================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: var(--font-body);
-            font-size: 18px;
-            line-height: 1.8;
-            color: var(--text);
-            background: var(--bg);
+            font-family: var(--font);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--white);
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        h1,h2,h3,h4 { line-height: 1.2; }
 
-        /* ========================================
-           TYPOGRAPHY
-        ======================================== */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-display);
+        /* ====== TOP BAR ====== */
+        .top-bar {
+            background: var(--navy);
+            color: var(--text-on-dark);
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 15px;
             font-weight: 700;
-            line-height: 1.2;
-            color: var(--primary);
         }
+        .top-bar a { color: var(--gold); }
+        .top-bar a:hover { text-decoration: underline; }
 
-        h1 {
-            font-size: clamp(48px, 8vw, 72px);
-            font-weight: 800;
-            line-height: 1.1;
+        /* ====== HERO ====== */
+        .hero {
+            background: linear-gradient(160deg, var(--navy) 0%, #0B0A2A 100%);
+            color: var(--white);
+            padding: 48px 24px 56px;
         }
-
-        h2 {
-            font-size: clamp(36px, 6vw, 56px);
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 48px;
+            align-items: center;
+        }
+        .hero-left { }
+        .hero-logo {
+            width: 200px;
             margin-bottom: 24px;
         }
-
-        h3 {
-            font-size: clamp(24px, 4vw, 32px);
-            margin-bottom: 16px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
-
-        strong {
-            font-weight: 700;
-        }
-
-        em {
-            font-style: italic;
-            color: var(--accent);
-        }
-
-        /* ========================================
-           BUTTONS & CTAs
-        ======================================== */
-        .btn {
+        .hero-eyebrow {
             display: inline-block;
-            padding: 18px 36px;
-            font-size: 18px;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: var(--radius);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: 2px solid transparent;
-            font-family: var(--font-body);
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 5px 16px;
+            border-radius: 20px;
+            margin-bottom: 16px;
         }
-
-        .btn-primary {
-            background: var(--accent);
-            color: var(--bg);
-            border-color: var(--accent);
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.15;
         }
-
-        .btn-primary:hover {
-            background: var(--accent-dark);
-            border-color: var(--accent-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+        .hero h1 em { color: var(--gold); font-style: normal; }
+        .hero-subtitle {
+            font-size: 17px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+            line-height: 1.6;
         }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--bg);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Secondary button on dark backgrounds */
-        .hero .btn-secondary,
-        .cta-section .btn-secondary {
-            color: var(--bg);
-            border-color: var(--bg);
-        }
-
-        .hero .btn-secondary:hover,
-        .cta-section .btn-secondary:hover {
-            background: var(--bg);
-            color: var(--primary);
-        }
-
-        /* ========================================
-           TRUST STRIP
-        ======================================== */
-        .trust-strip {
+        .hero-badges {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            padding: 16px 24px;
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--primary);
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
+            gap: 24px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
-
-        .trust-strip span {
+        .hero-badge {
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-
-        .trust-phone {
-            color: inherit;
-            text-decoration: none;
-            font-weight: inherit;
-        }
-
-        .trust-phone:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .trust-strip {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
-        }
-
-        /* ========================================
-           HERO SECTION (#hero)
-        ======================================== */
-        .hero {
-            min-height: calc(100vh - 60px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: clamp(60px, 10vh, 120px) clamp(24px, 5vw, 48px);
-            background: linear-gradient(135deg, rgba(25, 19, 84, 0.95) 0%, rgba(25, 19, 84, 0.85) 100%),
-                        url('https://images.pexels.com/photos/8317682/pexels-photo-8317682.jpeg?auto=compress&cs=tinysrgb&w=1920') center/cover no-repeat;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 0%, rgba(25, 19, 84, 0.3) 100%);
-            pointer-events: none;
-        }
-
-        .hero-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .logo {
-            max-width: 200px;
-            height: auto;
-            margin: 0 auto 32px;
-            display: block;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 16px;
-            border-radius: var(--radius);
-        }
-
-        .hero-eyebrow {
-            display: inline-block;
-            font-size: 16px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 24px;
-        }
-
-        .hero .hero-headline,
-        .hero .hero-description,
-        .hero .hero-eyebrow {
-            color: var(--bg);
-        }
-
-        .hero-headline {
-            margin-bottom: 24px;
-        }
-
-        .hero-description {
-            font-size: 19px;
-            line-height: 1.7;
-            max-width: 900px;
-            margin: 0 auto 24px;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-ctas {
-                flex-direction: column;
-            }
-
-            .hero-ctas .btn {
-                width: 100%;
-            }
-        }
-
-        /* ========================================
-           SECTION HEADER
-        ======================================== */
-        .section-header {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 64px;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            font-size: 16px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 16px;
-        }
-
-        .section-cta {
-            text-align: center;
-            margin-top: 64px;
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 768px) {
-            .section-cta {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section-cta .btn {
-                width: 100%;
-                max-width: 400px;
-            }
-        }
-
-        /* ========================================
-           SERVICES SECTION (#services)
-        ======================================== */
-        .services {
-            padding: clamp(80px, 12vh, 140px) clamp(24px, 5vw, 48px);
-            background: var(--surface);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            padding: 32px 24px;
-            background: var(--bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            text-align: center;
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-
-        .service-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: var(--primary);
-        }
-
-        .service-card p {
-            font-size: 17px;
-            line-height: 1.6;
-            color: var(--text);
-            opacity: 0.9;
-        }
-
-        /* ========================================
-           WHY CHOOSE SECTION (#why-choose)
-        ======================================== */
-        .why-choose {
-            padding: clamp(80px, 12vh, 140px) clamp(24px, 5vw, 48px);
-            background: var(--bg);
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .why-item {
-            padding: 40px 32px;
-            background: var(--surface);
-            border-radius: var(--radius);
-            border-left: 4px solid var(--accent);
-        }
-
-        .why-item h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-            color: var(--primary);
-        }
-
-        .why-item p {
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        /* ========================================
-           TESTIMONIALS SECTION (#testimonials)
-        ======================================== */
-        .testimonials {
-            padding: clamp(80px, 12vh, 140px) clamp(24px, 5vw, 48px);
-            background: var(--surface);
-        }
-
-        .testimonial-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            padding: 24px;
-            background: var(--bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
-            border-top: 3px solid var(--accent);
-        }
-
-        .stars {
-            color: var(--star);
             font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
-
-        blockquote {
-            font-size: 16px;
-            line-height: 1.6;
-            font-style: italic;
-            color: var(--text);
-            margin-bottom: 16px;
+        .hero-badge .icon {
+            width: 32px; height: 32px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; color: var(--white);
         }
-
-        .author {
+        .hero-betty {
+            max-width: 380px;
+            margin-top: 32px;
+            border-radius: 12px;
+        }
+        .hero-cta-row {
+            margin-top: 24px;
             display: flex;
-            align-items: center;
             gap: 12px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
         }
-
-        .author strong {
-            display: block;
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
             font-size: 16px;
             font-weight: 700;
-            color: var(--primary);
-        }
-
-        .author span {
-            display: block;
-            font-size: 14px;
-            color: var(--text);
-            opacity: 0.7;
-        }
-
-        /* ========================================
-           THERAPISTS SECTION (#therapists)
-        ======================================== */
-        .therapists {
-            padding: clamp(80px, 12vh, 140px) clamp(24px, 5vw, 48px);
-            background: var(--bg);
-        }
-
-        .therapists-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .therapists-content p {
-            font-size: 19px;
-            line-height: 1.8;
-            margin-bottom: 24px;
-        }
-
-        /* ========================================
-           CTA SECTION (#cta)
-        ======================================== */
-        .cta-section {
-            padding: clamp(80px, 12vh, 140px) clamp(24px, 5vw, 48px);
-            background: linear-gradient(135deg, var(--primary) 0%, rgba(25, 19, 84, 0.9) 100%);
-            color: var(--bg);
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            color: var(--bg);
-            margin-bottom: 24px;
-        }
-
-        .cta-section p {
-            font-size: 19px;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            color: rgba(255, 255, 255, 0.95);
-        }
-
-        /* ========================================
-           CONTACT/FORM SECTION (#contact)
-        ======================================== */
-        .contact {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: clamp(80px, 12vh, 140px) clamp(24px, 5vw, 48px);
-            background: var(--surface);
-        }
-
-        .form-container {
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .form-container h2 {
-            text-align: center;
-            margin-bottom: 16px;
-        }
-
-        .form-intro {
-            text-align: center;
-            font-size: 18px;
-            color: var(--text);
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-
-        .contact-info {
-            text-align: center;
-            margin-bottom: 48px;
-            padding: 32px;
-            background: var(--bg);
             border-radius: var(--radius);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-family: var(--font);
+            text-align: center;
         }
+        .btn-gold { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+        .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .btn-outline-white { background: transparent; color: var(--white); border-color: var(--white); }
+        .btn-outline-white:hover { background: var(--white); color: var(--navy); }
+        .btn-teal { background: var(--teal); color: var(--white); border-color: var(--teal); }
+        .btn-teal:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 
-        .contact-info h3 {
-            font-size: 20px;
-            margin-bottom: 16px;
+        /* ====== FORM CARD (in hero) ====== */
+        .form-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px 28px;
+            box-shadow: var(--shadow-lg);
+            color: var(--text-dark);
         }
-
-        .contact-info p {
-            font-size: 17px;
-            margin-bottom: 8px;
+        .form-card h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 20px;
         }
-
-        .contact-info a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 20px;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        form {
-            background: var(--bg);
-            padding: 48px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-md);
-        }
-
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            font-size: 17px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .required {
-            color: var(--accent);
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        select {
-            width: 100%;
-            padding: 16px 20px;
-            font-size: 18px;
-            font-family: var(--font-body);
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            background: var(--bg);
-            color: var(--text);
-            transition: all 0.3s ease;
-        }
-
-        input:focus,
-        select:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .qualifying-question {
-            background: rgba(217, 119, 6, 0.05);
-            padding: 24px;
-            border-radius: var(--radius);
-            border: 2px solid var(--accent);
-            margin-bottom: 24px;
-        }
-
-        .qualifying-question label {
-            font-size: 18px;
+            gap: 12px;
             margin-bottom: 12px;
         }
-
-        select {
+        .form-group { margin-bottom: 12px; }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+        .form-group .req { color: var(--error); }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 15px;
+            font-family: var(--font);
+            border: 2px solid #D1D5DB;
+            border-radius: 6px;
+            background: var(--white);
+            color: var(--text-dark);
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(0,156,201,0.12);
+        }
+        .form-group textarea { min-height: 80px; resize: vertical; }
+        .form-group select {
             cursor: pointer;
             appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23191354' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23191354' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 48px;
+            background-position: right 14px center;
+            padding-right: 36px;
         }
 
-        button[type="submit"] {
-            width: 100%;
-            padding: 20px 40px;
-            font-size: 20px;
-            font-weight: 700;
-            background: var(--accent);
-            color: var(--bg);
-            border: none;
-            border-radius: var(--radius);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: var(--font-body);
-        }
-
-        button[type="submit"]:hover {
-            background: var(--accent-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .form-note {
-            text-align: center;
-            font-size: 15px;
-            color: var(--text);
-            margin-top: 20px;
-            opacity: 0.7;
-        }
-
-        /* Qualifier checkbox styling */
+        /* Qualifier checkboxes */
         .qualifier-check {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            padding: 16px 20px;
-            background: var(--surface);
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
+            gap: 10px;
+            padding: 12px 14px;
+            background: var(--light-bg);
+            border: 2px solid transparent;
+            border-radius: 6px;
             cursor: pointer;
-            transition: border-color 0.2s ease, background 0.2s ease;
-            margin-bottom: 20px;
+            transition: border-color 0.2s;
+            margin-bottom: 10px;
         }
-        .qualifier-check:hover { border-color: var(--accent); }
-        .qualifier-check.checked {
-            border-color: var(--primary);
-            background: rgba(25, 19, 84, 0.03);
-        }
-        .qualifier-check.check-error { border-color: #dc2626; }
+        .qualifier-check:hover { border-color: var(--teal); }
+        .qualifier-check.checked { border-color: var(--navy); background: rgba(18,16,66,0.04); }
+        .qualifier-check.check-error { border-color: var(--error); }
         .qualifier-check input[type="checkbox"] {
-            width: 22px;
-            height: 22px;
-            margin-top: 2px;
-            flex-shrink: 0;
-            accent-color: var(--primary);
-            cursor: pointer;
+            width: 18px; height: 18px; margin-top: 2px;
+            flex-shrink: 0; accent-color: var(--navy); cursor: pointer;
         }
-        .qualifier-check span {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text);
-            line-height: 1.4;
-        }
+        .qualifier-check span { font-size: 14px; font-weight: 600; color: var(--text-dark); line-height: 1.4; }
 
-        /* Textarea */
-        textarea {
-            width: 100%;
-            padding: 16px 20px;
-            font-size: 18px;
-            font-family: var(--font-body);
-            border: 2px solid var(--border);
-            border-radius: var(--radius);
-            background: var(--bg);
-            color: var(--text);
-            transition: all 0.3s ease;
-            min-height: 120px;
-            resize: vertical;
-        }
-        textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
-        }
-
-        .form-error {
-            color: #dc2626;
-            font-size: 15px;
+        .field-error { border-color: var(--error) !important; }
+        .form-error-msg {
+            color: var(--error);
+            font-size: 13px;
             font-weight: 600;
             text-align: center;
-            min-height: 22px;
-            margin-bottom: 8px;
+            min-height: 18px;
+            margin-bottom: 6px;
         }
-        .field-error { border-color: #dc2626 !important; }
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: 800;
+            font-family: var(--font);
+            color: var(--navy);
+            background: var(--gold);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .form-submit:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .form-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+        .form-note {
+            font-size: 12px;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 10px;
+        }
 
-        /* Thank-you state (post-submission) */
+        /* Thank-you state */
         .thank-you-state { display: none; }
         .thank-you-state.visible { display: block; }
         .ty-icon {
-            width: 80px; height: 80px;
-            background: var(--success);
-            border-radius: 50%;
+            width: 64px; height: 64px;
+            background: var(--success); border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 24px;
-            color: var(--bg);
-            font-size: 40px;
+            margin: 0 auto 16px; color: var(--white); font-size: 32px;
         }
-        .thank-you-state h2 { text-align: center; margin-bottom: 12px; }
-        .ty-message {
-            text-align: center;
-            font-size: 18px;
-            color: var(--text);
-            opacity: 0.8;
-            margin-bottom: 32px;
-            line-height: 1.7;
-        }
+        .thank-you-state h2 { text-align: center; margin-bottom: 10px; font-size: 24px; color: var(--navy); }
+        .ty-message { text-align: center; font-size: 15px; color: var(--text-light); margin-bottom: 20px; line-height: 1.6; }
         .ty-referral-btn {
-            display: block;
-            text-align: center;
-            padding: 20px 40px;
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--bg);
-            background: var(--accent);
-            border-radius: var(--radius);
-            margin-bottom: 32px;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            display: block; text-align: center; padding: 14px 28px;
+            font-size: 16px; font-weight: 800; color: var(--navy);
+            background: var(--gold); border-radius: 6px; margin-bottom: 20px;
+            transition: all 0.25s; text-transform: uppercase; letter-spacing: 0.5px;
         }
-        .ty-referral-btn:hover {
-            background: var(--accent-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
+        .ty-referral-btn:hover { background: var(--gold-dark); transform: translateY(-2px); }
         .ty-video {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            margin-bottom: 28px;
+            position: relative; padding-bottom: 56.25%; height: 0;
+            border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md); margin-bottom: 16px;
         }
-        .ty-video iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: 0;
+        .ty-video iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
+        .ty-phone-cta {
+            text-align: center; padding: 16px;
+            background: var(--light-bg); border-radius: 6px;
         }
-        .ty-phone-box {
-            text-align: center;
-            padding: 24px;
-            background: var(--surface);
-            border-radius: var(--radius);
-        }
-        .ty-phone-box p {
-            font-size: 16px;
-            margin-bottom: 8px;
-            opacity: 0.8;
-        }
-        .ty-phone-box a {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--accent);
-            text-decoration: none;
-        }
-        .ty-phone-box a:hover { text-decoration: underline; }
+        .ty-phone-cta p { font-size: 14px; color: var(--text-light); margin-bottom: 4px; }
+        .ty-phone-cta a { font-size: 22px; font-weight: 800; color: var(--teal); }
+        .ty-phone-cta a:hover { text-decoration: underline; }
 
-        @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            form {
-                padding: 32px 24px;
-            }
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; }
+            .hero-betty { max-width: 280px; }
+            .form-card { margin-top: 24px; }
+            .form-row { grid-template-columns: 1fr; }
         }
 
-        /* ========================================
-           PROCESS TIMELINE (#how-it-works)
-        ======================================== */
-        .process-timeline {
-            padding: clamp(80px, 12vh, 140px) clamp(24px, 5vw, 48px);
-            background: var(--bg);
-        }
-
-        .timeline-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 32px;
-            max-width: 1100px;
-            margin: 0 auto;
-            counter-reset: step;
-        }
-
-        .timeline-step {
-            text-align: center;
+        /* ====== REFERRAL LOGOS ====== */
+        .referral-logos {
+            background: var(--light-bg);
             padding: 32px 24px;
-            position: relative;
-            counter-increment: step;
+            text-align: center;
         }
-
-        .timeline-step::before {
-            content: counter(step);
+        .referral-logos h3 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        .logo-row {
             display: flex;
-            align-items: center;
             justify-content: center;
-            width: 56px;
-            height: 56px;
-            background: var(--accent);
-            color: var(--bg);
-            font-family: var(--font-display);
-            font-size: 24px;
-            font-weight: 800;
-            border-radius: 50%;
-            margin: 0 auto 20px;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .logo-row img {
+            height: 45px;
+            width: auto;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .logo-row img:hover { opacity: 1; }
+
+        @media (max-width: 600px) {
+            .logo-row { gap: 20px; }
+            .logo-row img { height: 32px; }
         }
 
-        .timeline-step h3 {
-            font-size: 20px;
+        /* ====== TESTIMONIALS ====== */
+        .testimonials {
+            padding: 56px 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .testimonial-card {
+            background: var(--white);
+            border-left: 4px solid var(--teal);
+            padding: 28px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: var(--shadow-sm);
+        }
+        .testimonial-card blockquote {
+            font-size: 16px;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.7;
             margin-bottom: 12px;
         }
-
-        .timeline-step p {
-            font-size: 16px;
-            line-height: 1.6;
-            opacity: 0.85;
-        }
-
-        .timeline-step .step-microcopy {
+        .testimonial-card .attrib {
             font-size: 14px;
-            color: var(--accent);
             font-weight: 700;
-            margin-top: 8px;
+            color: var(--navy);
         }
 
-        @media (min-width: 769px) {
-            .timeline-step:not(:last-child)::after {
-                content: '';
-                position: absolute;
-                top: 52px;
-                right: -16px;
-                width: 32px;
-                height: 2px;
-                background: var(--border);
-            }
+        @media (max-width: 700px) {
+            .testimonial-grid { grid-template-columns: 1fr; }
         }
 
-        /* ========================================
-           FLOATING CTA
-        ======================================== */
+        /* ====== TELEHEALTH SECTION ====== */
+        .telehealth {
+            background: var(--light-bg);
+            padding: 64px 24px;
+        }
+        .telehealth-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .telehealth-img {
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+        .telehealth-content h2 {
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+        .telehealth-content p {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+        .benefit-item {
+            text-align: center;
+            padding: 16px 8px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+        }
+        .benefit-icon {
+            width: 40px; height: 40px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 8px;
+            color: var(--white); font-size: 18px;
+        }
+        .benefit-item span {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.3;
+        }
+
+        @media (max-width: 900px) {
+            .telehealth-inner { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 500px) {
+            .benefits-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ====== CTA BAND ====== */
+        .cta-band {
+            background: var(--teal);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 24px;
+        }
+        .cta-band h2 {
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .cta-band p {
+            font-size: 17px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        .cta-band .btn-gold { font-size: 18px; padding: 16px 36px; }
+
+        /* ====== SPECIALTIES ====== */
+        .specialties {
+            padding: 64px 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .specialties h2 {
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 800;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px 24px;
+        }
+        .specialty-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--light-bg);
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: background 0.2s;
+        }
+        .specialty-item:hover { background: #E0ECFF; }
+        .specialty-item .dot {
+            width: 8px; height: 8px;
+            background: var(--teal);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 700px) {
+            .specialties-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 450px) {
+            .specialties-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ====== WHY CHOOSE US ====== */
+        .why-section {
+            background: var(--light-bg);
+            padding: 64px 24px;
+        }
+        .why-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .why-content h2 {
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 24px;
+        }
+        .why-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .why-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .why-list .check-icon {
+            width: 28px; height: 28px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--white); font-size: 14px; flex-shrink: 0;
+        }
+        .why-stats {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .stat-box {
+            background: var(--white);
+            padding: 16px 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        .stat-box .num {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--teal);
+            display: block;
+        }
+        .stat-box .label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .why-image {
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+        .hipaa-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .hipaa-badge img { height: 40px; width: auto; }
+        .hipaa-badge span { font-size: 14px; font-weight: 700; color: var(--navy); }
+
+        @media (max-width: 900px) {
+            .why-inner { grid-template-columns: 1fr; }
+        }
+
+        /* ====== BOTTOM CTA ====== */
+        .bottom-cta {
+            background: linear-gradient(160deg, var(--navy) 0%, #0B0A2A 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 64px 24px;
+        }
+        .bottom-cta h2 {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .bottom-cta h2 em { color: var(--gold); font-style: normal; }
+        .bottom-cta p {
+            font-size: 18px;
+            opacity: 0.85;
+            max-width: 650px;
+            margin: 0 auto 28px;
+        }
+        .bottom-cta .cta-btns {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ====== FOOTER ====== */
+        .footer {
+            background: #0A0920;
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 24px 20px;
+            font-size: 13px;
+        }
+        .footer a { color: var(--gold); }
+        .footer-brand { color: var(--white); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+
+        /* ====== FLOATING CTA ====== */
         .floating-cta {
             position: fixed;
-            right: 24px;
-            bottom: 24px;
-            z-index: 9999;
+            bottom: 20px;
+            right: 20px;
             display: flex;
-            gap: 12px;
-            padding: 16px 20px;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius);
+            gap: 10px;
+            z-index: 200;
+            background: var(--white);
+            padding: 12px 14px;
+            border-radius: 12px;
             box-shadow: var(--shadow-lg);
+            border: 2px solid rgba(0,0,0,0.06);
             transition: all 0.3s ease;
-            border: 2px solid var(--border);
         }
-
-        .floating-cta.is-hidden {
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(20px);
-        }
+        .floating-cta.is-hidden { opacity: 0; pointer-events: none; transform: translateY(20px); }
 
         @media (max-width: 768px) {
             .floating-cta {
-                left: 16px;
-                right: 16px;
-                bottom: 16px;
+                left: 12px; right: 12px; bottom: 12px;
                 flex-direction: column;
-                padding: 16px;
             }
-
-            .floating-cta .btn {
-                width: 100%;
-                text-align: center;
-                padding: 16px 24px;
-            }
+            .floating-cta .btn { width: 100%; text-align: center; padding: 14px; }
         }
 
-        /* ========================================
-           ACCESSIBILITY & FOCUS STYLES
-        ======================================== */
-        *:focus-visible {
-            outline: 3px solid var(--accent);
-            outline-offset: 2px;
-        }
-
+        /* Accessibility */
+        *:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
         .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
+            position: absolute; width: 1px; height: 1px; padding: 0;
+            margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+            white-space: nowrap; border: 0;
         }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
+    <!-- GTM noscript -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX4B622D"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Trust Strip -->
-    <div class="trust-strip">
-        <span><a href="tel:6308967160" class="trust-phone">Call (630) 896-7160</a></span>
-        <span>Licensed Clinical Social Workers</span>
-        <span>Medicare Accepted</span>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        Help is on the way! Call Now: <a href="tel:6308967160">(630) 896-7160</a>
     </div>
 
     <main>
-    <!-- Hero Section -->
-    <section class="hero" id="hero" aria-labelledby="hero-headline">
-        <div class="hero-container">
-            <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/01/BM_Plain.png" alt="Blue Moon Senior Counseling Logo" class="logo" width="200" height="100" loading="eager">
-            <span class="hero-eyebrow">Help is on the way!</span>
-            <h1 class="hero-headline" id="hero-headline">Medicare-Approved <em>Geriatric Counseling</em> Services</h1>
-            <p class="hero-description">Geriatric counseling is specialized therapy for older adults, designed to address emotional, behavioral, and mental health challenges that come with aging. At Blue Moon Senior Counseling, our licensed therapists for seniors provide telehealth sessions tailored to unique needs.</p>
-            <p class="hero-description">Our geriatric counselors utilize proven approaches, such as Cognitive Behavioral Therapy (CBT), which has been adapted for older adults. All services are Medicare-approved so that seniors can receive affordable care.</p>
-            <div class="hero-ctas">
-                <a href="#contact" class="btn btn-primary">Check Your Eligibility</a>
-                <a href="tel:6308967160" class="btn btn-secondary">Call (630) 896-7160</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services" aria-labelledby="services-heading">
-        <div class="section-header">
-            <span class="eyebrow">Our Services</span>
-            <h2 id="services-heading">Our Senior Mental Health Counseling Services</h2>
-            <p>We provide specialized counseling for a wide range of mental health challenges that seniors face.</p>
-        </div>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Older Adult & Depression</h3>
-                <p>Although depression typically begins in childhood, life changes that occur later on in life can affect your mental health.</p>
-            </div>
-            <div class="service-card">
-                <h3>Seniors & Anxiety Disorders</h3>
-                <p>Anxiety disorders include disorders that share features of excessive fear and anxiety and related behavioral disturbances.</p>
-            </div>
-            <div class="service-card">
-                <h3>Bereavement Counseling</h3>
-                <p>Grief takes on many forms and it involves more than just sadness. Anger is an emotion that can come from grief.</p>
-            </div>
-            <div class="service-card">
-                <h3>Adjustment Disorders</h3>
-                <p>Coping with change isn't easy. Even if the change is positive, it can make you feel uncomfortable and even stressed.</p>
-            </div>
-            <div class="service-card">
-                <h3>Agoraphobia in Older Adults</h3>
-                <p>It's similar to claustrophobia, but not exclusive to tight spaces. It can hit when you're in a crowd or standing in a line.</p>
-            </div>
-            <div class="service-card">
-                <h3>Elderly Abuse and Neglect</h3>
-                <p>Unfortunately, caregivers may take advantage of an elderly person's frail state and cognitive decline.</p>
-            </div>
-            <div class="service-card">
-                <h3>Caregiver Burnout</h3>
-                <p>Caregiver burnout is a very real condition that's characterized by exhaustion, mood changes and shifts in attitude.</p>
-            </div>
-            <div class="service-card">
-                <h3>Difficulty with Aging Process</h3>
-                <p>It's not uncommon to have a hard time accepting aging. You have different concerns when you're 85 than when you're 25.</p>
-            </div>
-            <div class="service-card">
-                <h3>Coping with Illness</h3>
-                <p>When you're diagnosed with an illness, working with a healthcare provider can help you educate yourself about the disease.</p>
-            </div>
-            <div class="service-card">
-                <h3>Grief & Loss</h3>
-                <p>Any kind of loss can lead to feelings of grief. Loss of your freedom or health can also contribute to grief.</p>
-            </div>
-            <div class="service-card">
-                <h3>PTSD in Older Adults</h3>
-                <p>Examples of experiences that can lead to PTSD include a natural disaster, war, a serious accident, or an assault.</p>
-            </div>
-            <div class="service-card">
-                <h3>Isolation & Loneliness</h3>
-                <p>Many people lose their outlets for social interaction as they age, and this can lead to serious mental health issues.</p>
-            </div>
-            <div class="service-card">
-                <h3>Coping With Disabilities</h3>
-                <p>Older adults with intellectual and developmental disabilities may face difficulties that typical seniors don't experience.</p>
-            </div>
-            <div class="service-card">
-                <h3>Stress Management</h3>
-                <p>Older adults may be especially vulnerable to chronic stress because they're experiencing so many major life changes.</p>
-            </div>
-        </div>
-
-        <div class="section-cta">
-            <a href="#contact" class="btn btn-primary">Check Your Eligibility</a>
-            <a href="tel:6308967160" class="btn btn-secondary">Call (630) 896-7160</a>
-        </div>
-    </section>
-
-    <!-- Why Choose Section -->
-    <section class="why-choose" id="why-choose" aria-labelledby="why-choose-heading">
-        <div class="section-header">
-            <span class="eyebrow">Why Choose Us</span>
-            <h2 id="why-choose-heading">Why Choose Blue Moon Senior Counseling?</h2>
-        </div>
-
-        <div class="why-grid">
-            <div class="why-item">
-                <h3>Phone or Video Sessions Available</h3>
-                <p>We offer flexible options, including over the phone and via secure video sessions, making it easier for seniors to get the help they need—comfortably and conveniently.</p>
-            </div>
-            <div class="why-item">
-                <h3>Medicare Accepted</h3>
-                <p>Most of our services are covered by Medicare, allowing you to focus on healing rather than worrying about bills.</p>
-            </div>
-            <div class="why-item">
-                <h3>Personalized Senior Wellness Counseling</h3>
-                <p>We don't take a one-size-fits-all approach. Our therapy plans are built around each client's life history, medical background, and goals for the future.</p>
-            </div>
-        </div>
-
-        <div class="section-cta">
-            <a href="#contact" class="btn btn-primary">Check Your Eligibility</a>
-            <a href="tel:6308967160" class="btn btn-secondary">Call (630) 896-7160</a>
-        </div>
-    </section>
-
-    <!-- How It Works Process Timeline -->
-    <section class="process-timeline" id="how-it-works" aria-labelledby="process-heading">
-        <div class="section-header">
-            <span class="eyebrow">How It Works</span>
-            <h2 id="process-heading">Getting Started Is Simple</h2>
-            <p>From your first call to your first session, we handle everything so you can focus on feeling better.</p>
-        </div>
-
-        <div class="timeline-steps">
-            <div class="timeline-step">
-                <h3>Check Eligibility</h3>
-                <p>Fill out our short form or call us. We verify your Medicare coverage and answer any questions.</p>
-                <span class="step-microcopy">Takes 2 minutes</span>
-            </div>
-            <div class="timeline-step">
-                <h3>Get Matched</h3>
-                <p>Our admissions team pairs you with a licensed therapist who specializes in your specific needs.</p>
-                <span class="step-microcopy">Within 24-48 hours</span>
-            </div>
-            <div class="timeline-step">
-                <h3>Start Sessions</h3>
-                <p>Meet with your therapist by phone or secure video from the comfort of your home.</p>
-                <span class="step-microcopy">No transportation needed</span>
-            </div>
-            <div class="timeline-step">
-                <h3>We Handle Billing</h3>
-                <p>We bill Medicare directly. No surprise costs, no complicated paperwork for you.</p>
-                <span class="step-microcopy">Medicare Approved</span>
-            </div>
-        </div>
-
-        <div class="section-cta">
-            <a href="#contact" class="btn btn-primary">Check Your Eligibility</a>
-            <a href="tel:6308967160" class="btn btn-secondary">Call (630) 896-7160</a>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
-        <div class="section-header">
-            <h2 id="testimonials-heading">Here is What Our Clients Have to Say About Us</h2>
-            <p>Real experiences from seniors, families, and healthcare professionals.</p>
-        </div>
-
-        <div class="testimonial-cards">
-            <div class="testimonial-card">
-                <div class="stars">5 Stars</div>
-                <blockquote>"Using Blue Moon LCSW's has been an important service we offer helping our patients both socially and mentally transition through rough points in their lives. I would highly recommend using their services."</blockquote>
-                <div class="author">
-                    <div>
-                        <strong>Scott S.</strong>
-                        <span>Home Health Agency, Davie, FL</span>
-                    </div>
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/01/BM_Plain.png" alt="Blue Moon Senior Counseling" class="hero-logo" width="200" height="100" loading="eager">
+                <span class="hero-eyebrow">Help is on the way!</span>
+                <h1>Senior Counseling from the <em>Comfort of Your Home</em></h1>
+                <p class="hero-subtitle">Tele-Therapy Services. Beneficial for both seniors and caregivers. Medicare beneficiaries don't need a doctor's referral.</p>
+                <div class="hero-badges">
+                    <div class="hero-badge"><span class="icon">&#10004;</span> Covered by Medicare</div>
+                    <div class="hero-badge"><span class="icon">&#9742;</span> Phone / Video / Chat</div>
+                    <div class="hero-badge"><span class="icon">&#9734;</span> Licensed Therapists</div>
                 </div>
+                <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2023/04/BM_Betty.png" alt="Senior woman receiving counseling" class="hero-betty" width="380" height="320" loading="eager">
             </div>
 
-            <div class="testimonial-card">
-                <div class="stars">5 Stars</div>
-                <blockquote>"The services that we provide have made a difference in the lives of many seniors and their family members. I feel lucky to be part of such a professional and caring team."</blockquote>
-                <div class="author">
-                    <div>
-                        <strong>Jamie G.</strong>
-                        <span>Hollywood, FL</span>
-                    </div>
-                </div>
-            </div>
+            <!-- FORM -->
+            <div class="form-card" id="contact">
+                <div id="form-state">
+                    <h2>Got Questions? We've Got Answers!</h2>
+                    <form id="contact-form" novalidate>
+                        <input type="hidden" name="customer_id" value="93cb589f-7195-4e82-9260-2e41b0ed3bde">
+                        <input type="hidden" name="site_id" value="49148f3a-03a8-4cdf-9c3d-2e79f89383f3">
 
-            <div class="testimonial-card">
-                <div class="stars">5 Stars</div>
-                <blockquote>"As a provider, we have found the services to be extremely beneficial for our residents. Our residents who participate with their services seem to have less episodes of need for being hospitalized due to mental health reasons. I would highly recommend the utilization of Blue Moon Senior Counseling."</blockquote>
-                <div class="author">
-                    <div>
-                        <strong>Brian S.</strong>
-                        <span>Executive Director, Tampa, FL</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">5 Stars</div>
-                <blockquote>"As a Resident Services Director my goal is to help my residents have the best days possible. Having Blue Moon Senior Counseling services available helps me do just that. They are dedicated professionals who really care about my residents and help me make their days so much better!"</blockquote>
-                <div class="author">
-                    <div>
-                        <strong>Colleen D.</strong>
-                        <span>Resident Services Director, Deerfield Beach, FL</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">5 Stars</div>
-                <blockquote>"Blue Moon has helped our residents in so many ways. When so much is changing and unknown, Blue Moon helps give them stability and purpose and ultimately improve their everyday lives."</blockquote>
-                <div class="author">
-                    <div>
-                        <strong>Steven C.</strong>
-                        <span>ALF Owner, Clearwater, FL</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">5 Stars</div>
-                <blockquote>"Blue Moon Counseling has been a wonderful find in my life... and my Mom's. I am so happy to have your services available for my Mom... you are kind, caring...and make a difference in so many ways. Thank you."</blockquote>
-                <div class="author">
-                    <div>
-                        <strong>Deb W.</strong>
-                        <span>Fort Lauderdale, FL</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">5 Stars</div>
-                <blockquote>"Many thanks again for your kind attention to our parents. They enjoy your company and appreciate your visits. Your feedback and guidance to our family is invaluable."</blockquote>
-                <div class="author">
-                    <div>
-                        <strong>Pam E.</strong>
-                        <span>Deerfield Beach, FL</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">5 Stars</div>
-                <blockquote>"You were more than I hoped for. You were everything I had wished I had 6 months ago to help them understand their condition. I can't think of anything more that could be done in that regard and my deepest thanks and respect to you for what you did for us, and for everyone who must find their way through this."</blockquote>
-                <div class="author">
-                    <div>
-                        <strong>Alan A.</strong>
-                        <span>Fort Lauderdale, FL</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-cta">
-            <a href="#contact" class="btn btn-primary">Check Your Eligibility</a>
-            <a href="tel:6308967160" class="btn btn-secondary">Call (630) 896-7160</a>
-        </div>
-    </section>
-
-    <!-- Therapists Section -->
-    <section class="therapists" id="therapists" aria-labelledby="therapists-heading">
-        <div class="therapists-content">
-            <span class="eyebrow">Our Therapists</span>
-            <h2 id="therapists-heading">Licensed Therapists for Seniors</h2>
-            <p>Finding the right therapist for seniors can make all the difference in maintaining emotional well-being, independence, and quality of life. At Blue Moon Senior Counseling, our licensed therapists specialize in working with older adults and understand the unique challenges aging can bring.</p>
-            <p>With secure telehealth options, our senior-focused therapists make counseling accessible and convenient. All services are Medicare-approved, and we handle the paperwork so seniors can focus on healing and support.</p>
-            <div class="section-cta">
-                <a href="#contact" class="btn btn-primary">Check Your Eligibility</a>
-                <a href="tel:6308967160" class="btn btn-secondary">Call (630) 896-7160</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section" id="cta" aria-labelledby="cta-heading">
-        <h2 id="cta-heading">Looking for a Geriatric Counselor Near Me?</h2>
-        <p>Blue Moon Senior Counseling offers compassionate, professional support tailored to the unique needs of older adults. Our licensed therapists for seniors help manage stress, cope with grief, adjust to life changes, and improve overall emotional well-being.</p>
-        <p>We offer virtual sessions, making it simple and convenient to connect with a caring geriatric counselor. Take the first step today toward peace of mind and renewed confidence.</p>
-        <div class="section-cta">
-            <a href="#contact" class="btn btn-primary">Check Your Eligibility</a>
-            <a href="tel:6308967160" class="btn btn-secondary">Call (630) 896-7160</a>
-        </div>
-    </section>
-
-    <!-- Contact/Form Section -->
-    <section class="contact" id="contact" aria-labelledby="contact-heading">
-        <div class="form-container">
-            <!-- FORM STATE -->
-            <div id="form-state">
-                <h2 id="contact-heading">Got Questions? We've Got Answers!</h2>
-                <p class="form-intro">Our admission specialists are standing by to answer any questions you may have. Office hours are from 8:30 AM CST to 6:30 PM CST, Monday through Friday.</p>
-
-                <div class="contact-info">
-                    <h3>Prefer to Call?</h3>
-                    <p>Our team is ready to help</p>
-                    <a href="tel:6308967160">(630) 896-7160</a>
-                </div>
-
-                <form id="contact-form" novalidate>
-                    <input type="hidden" name="customer_id" value="93cb589f-7195-4e82-9260-2e41b0ed3bde">
-                    <input type="hidden" name="site_id" value="49148f3a-03a8-4cdf-9c3d-2e79f89383f3">
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="first-name">First Name <span class="required">*</span></label>
-                            <input type="text" id="first-name" name="first_name" required aria-required="true">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name">First Name <span class="req">*</span></label>
+                                <input type="text" id="first_name" name="first_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last Name <span class="req">*</span></label>
+                                <input type="text" id="last_name" name="last_name" required>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="last-name">Last Name <span class="required">*</span></label>
-                            <input type="text" id="last-name" name="last_name" required aria-required="true">
+                            <label for="email">Email <span class="req">*</span></label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required aria-required="true">
-                    </div>
+                        <div class="form-group">
+                            <label for="phone">Phone <span class="req">*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="phone">Phone Number <span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" required aria-required="true">
-                    </div>
+                        <label class="qualifier-check" id="cb1-wrap">
+                            <input type="checkbox" name="understands_seniors_only" id="cb1" required>
+                            <span>I understand that BMSC only provides counseling services for seniors</span>
+                        </label>
 
-                    <!-- Qualifier Checkboxes (from BMSC referral questions page) -->
-                    <label class="qualifier-check" id="cb1-wrap">
-                        <input type="checkbox" name="understands_seniors_only" id="cb1" required>
-                        <span>I understand that BMSC only provides counseling services for seniors</span>
-                    </label>
+                        <label class="qualifier-check" id="cb2-wrap">
+                            <input type="checkbox" name="understands_therapy_only" id="cb2" required>
+                            <span>You understand Blue Moon provides therapy only, not other services</span>
+                        </label>
 
-                    <label class="qualifier-check" id="cb2-wrap">
-                        <input type="checkbox" name="understands_therapy_only" id="cb2" required>
-                        <span>You understand Blue Moon provides therapy only, not other services</span>
-                    </label>
+                        <div class="form-group">
+                            <label for="medicaretype">Do you have traditional Medicare? <span class="req">*</span></label>
+                            <select id="medicaretype" name="medicaretype" required>
+                                <option value="">Select an option...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="Not Sure">Not sure</option>
+                            </select>
+                        </div>
 
-                    <!-- Medicare Qualifier (from BMSC referral questions page) -->
-                    <div class="form-group qualifying-question">
-                        <label for="medicaretype">Do you have traditional Medicare? <span class="required">*</span></label>
-                        <select id="medicaretype" name="medicaretype" required aria-required="true">
-                            <option value="">Select an option...</option>
-                            <option value="Yes">Yes</option>
-                            <option value="Not Sure">Not sure</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="contacttimes">Best time to contact you? <span class="req">*</span></label>
+                            <select id="contacttimes" name="contacttimes" required>
+                                <option value="">Select an option...</option>
+                                <option value="Morning">Morning</option>
+                                <option value="Afternoon">Afternoon</option>
+                            </select>
+                        </div>
 
-                    <!-- Best Contact Time (from BMSC referral questions page) -->
-                    <div class="form-group">
-                        <label for="contacttimes">What is the best time to contact you? <span class="required">*</span></label>
-                        <select id="contacttimes" name="contacttimes" required aria-required="true">
-                            <option value="">Select an option...</option>
-                            <option value="Morning">Morning</option>
-                            <option value="Afternoon">Afternoon</option>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="message">Questions/Comments <span class="req">*</span></label>
+                            <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+                        </div>
 
-                    <!-- Message Box (from BMSC referral questions page) -->
-                    <div class="form-group">
-                        <label for="message">Questions/Comments <span class="required">*</span></label>
-                        <textarea id="message" name="message" placeholder="Tell us how we can help you or someone you know..." required aria-required="true"></textarea>
-                    </div>
-
-                    <div class="form-error" id="form-error" role="alert" aria-live="polite"></div>
-
-                    <button type="submit" class="btn btn-primary">SEND</button>
-
-                    <p class="form-note">By submitting this form, you agree to be contacted by Blue Moon Senior Counseling. Your information is kept confidential.</p>
-                </form>
-            </div>
-
-            <!-- THANK YOU STATE (shown after form submission) -->
-            <div class="thank-you-state" id="thank-you-state">
-                <div class="ty-icon">&#10004;</div>
-                <h2>Thank You!</h2>
-                <p class="ty-message">We received your information and a team member will be reaching out to you soon. In the meantime, if you are ready to get started, you can fill out a referral form below, watch our video to learn more, or call our office directly.</p>
-
-                <a href="https://bluemoonseniorcounseling.com/referral-for-senior-counseling-new/" class="ty-referral-btn" target="_blank" rel="noopener">Fill Out a Referral Form</a>
-
-                <div class="ty-video">
-                    <iframe src="https://www.youtube.com/embed/ge-w1SYxiqs" title="Blue Moon Senior Counseling - Telehealth Services" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                        <div class="form-error-msg" id="form-error" role="alert" aria-live="polite"></div>
+                        <button type="submit" class="form-submit" id="lead-submit">SEND</button>
+                        <p class="form-note">By submitting this form, you agree to be contacted by Blue Moon Senior Counseling. Your information is kept confidential.</p>
+                    </form>
                 </div>
 
-                <div class="ty-phone-box">
-                    <p>Prefer to speak with someone now?</p>
-                    <a href="tel:6308967160">(630) 896-7160</a>
+                <!-- Thank You State -->
+                <div class="thank-you-state" id="thank-you-state">
+                    <div class="ty-icon">&#10004;</div>
+                    <h2>Thank You!</h2>
+                    <p class="ty-message">We received your information and a team member will reach out soon. In the meantime, fill out a referral form, watch our video, or call us directly.</p>
+                    <a href="https://bluemoonseniorcounseling.com/referral-for-senior-counseling-new/" class="ty-referral-btn" target="_blank" rel="noopener">Fill Out a Referral Form</a>
+                    <div class="ty-video">
+                        <iframe src="https://www.youtube.com/embed/ge-w1SYxiqs" title="Blue Moon Senior Counseling" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="ty-phone-cta">
+                        <p>Prefer to speak with someone now?</p>
+                        <a href="tel:6308967160">(630) 896-7160</a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ==================== REFERRAL LOGOS ==================== -->
+    <section class="referral-logos">
+        <h3>Blue Moon Senior Counseling is Referred to by National Leaders</h3>
+        <div class="logo-row">
+            <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/04/UCLA-Logo-01.png" alt="UCLA" loading="lazy">
+            <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/04/Cedars-Sinai-Logo-01-1024x512.png" alt="Cedars-Sinai" loading="lazy">
+            <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/04/AARP-Logo-01-1024x512.png" alt="AARP" loading="lazy">
+            <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/04/DaVita-Logo-01-1024x512.png" alt="DaVita" loading="lazy">
+            <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/04/Dignity-Health-Logo-01-1024x512.png" alt="Dignity Health" loading="lazy">
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section class="testimonials">
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <blockquote>"Using Blue Moon LCSW's has been an important service we offer our patients...I would highly recommend using their services."</blockquote>
+                <div class="attrib">- Scott S, Home Health Agency</div>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>"Blue Moon Counseling has been a wonderful find in my life... and my Mom's. You are kind, caring... and make a difference in so many ways."</blockquote>
+                <div class="attrib">- Deb W, Fort Lauderdale, FL</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TELEHEALTH SECTION ==================== -->
+    <section class="telehealth" id="telehealth">
+        <div class="telehealth-inner">
+            <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2023/04/Phone-Therapist.png" alt="Senior using telehealth therapy on phone" class="telehealth-img" width="500" height="400" loading="lazy">
+            <div class="telehealth-content">
+                <h2>Tele-Therapy Senior Counseling Service</h2>
+                <p>Telehealth is a Medicare Part B covered benefit (we also accept PPOs and private pay). Telehealth allows you to connect with a licensed therapist in real-time via live chat, phone, or video call. No travel, no waiting rooms, just compassionate care from the comfort of your home.</p>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">&#128100;</div>
+                        <span>Licensed Therapists</span>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">&#127968;</div>
+                        <span>Comfort &amp; Security</span>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">&#127759;</div>
+                        <span>Great for Rural Areas</span>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">&#9201;</div>
+                        <span>No Long Wait Times</span>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">&#10084;</div>
+                        <span>Great for Caregivers</span>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">&#128274;</div>
+                        <span>HIPAA Compliant</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA BAND ==================== -->
+    <section class="cta-band">
+        <h2>Got Questions? We've Got Answers!</h2>
+        <p>Our admission specialists are standing by. Office hours: 8:30 AM - 6:30 PM CST, Monday through Friday.</p>
+        <a href="#contact" class="btn btn-gold">Fill Out the Form Above</a>
+    </section>
+
+    <!-- ==================== SPECIALTIES ==================== -->
+    <section class="specialties" id="specialties">
+        <h2>Our Top-Rated Therapists Specialize in Treating</h2>
+        <div class="specialties-grid">
+            <div class="specialty-item"><span class="dot"></span> Depression and Anxiety</div>
+            <div class="specialty-item"><span class="dot"></span> Isolation and Deep Loneliness</div>
+            <div class="specialty-item"><span class="dot"></span> Bereavement Counseling</div>
+            <div class="specialty-item"><span class="dot"></span> Anxiety Disorders</div>
+            <div class="specialty-item"><span class="dot"></span> Adjustment Disorders</div>
+            <div class="specialty-item"><span class="dot"></span> Agoraphobia</div>
+            <div class="specialty-item"><span class="dot"></span> Elderly Abuse and Neglect</div>
+            <div class="specialty-item"><span class="dot"></span> Caregiver Burnout</div>
+            <div class="specialty-item"><span class="dot"></span> Difficulty with Aging</div>
+            <div class="specialty-item"><span class="dot"></span> Coping with Illness</div>
+            <div class="specialty-item"><span class="dot"></span> Grief and Loss</div>
+            <div class="specialty-item"><span class="dot"></span> PTSD Support</div>
+            <div class="specialty-item"><span class="dot"></span> Stress and Trauma</div>
+            <div class="specialty-item"><span class="dot"></span> Coping Skills</div>
+            <div class="specialty-item"><span class="dot"></span> Depression in Seniors</div>
+            <div class="specialty-item"><span class="dot"></span> Geriatric Therapy</div>
+            <div class="specialty-item"><span class="dot"></span> Behavioral Health</div>
+            <div class="specialty-item"><span class="dot"></span> End of Life Therapy</div>
+        </div>
+    </section>
+
+    <!-- ==================== WHY CHOOSE US ==================== -->
+    <section class="why-section" id="why">
+        <div class="why-inner">
+            <div class="why-content">
+                <h2>Why Choose Blue Moon Senior Counseling?</h2>
+                <ul class="why-list">
+                    <li><span class="check-icon">&#10004;</span> Covered by Medicare</li>
+                    <li><span class="check-icon">&#10004;</span> Top-Rated Therapists</li>
+                    <li><span class="check-icon">&#10004;</span> Available Nationwide</li>
+                    <li><span class="check-icon">&#10004;</span> HIPAA Compliant</li>
+                    <li><span class="check-icon">&#10004;</span> 100% Licensed Therapists</li>
+                    <li><span class="check-icon">&#10004;</span> Phone, Video, or Chat Sessions</li>
+                </ul>
+                <div class="why-stats">
+                    <div class="stat-box">
+                        <span class="num">14+</span>
+                        <span class="label">Years Experience</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="num">100%</span>
+                        <span class="label">Licensed Therapists</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="num">50</span>
+                        <span class="label">States Covered</span>
+                    </div>
+                </div>
+                <p style="font-size:16px;color:var(--text-dark);line-height:1.8;">Blue Moon Senior Counseling has been connecting the best licensed therapists in the nation with seniors for over 14 years. Our new app allows us to connect you with a therapist in record time so you don't have to wait.</p>
+                <div class="hipaa-badge">
+                    <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/elementor/thumbs/Hippa-Logo-rkgbnm3ni5n9tkeniaslqw8xyp357ygovkdyi9kpau.webp" alt="HIPAA Compliant" loading="lazy">
+                    <span>HIPAA Compliant</span>
+                </div>
+            </div>
+            <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/04/Therapists.png" alt="Blue Moon Senior Counseling Therapists" class="why-image" width="500" height="400" loading="lazy">
+        </div>
+    </section>
+
+    <!-- ==================== BOTTOM CTA ==================== -->
+    <section class="bottom-cta">
+        <h2>Reclaim Your Life or Provide <em>Hope to a Senior</em> You Know Today</h2>
+        <p>Take the first step toward peace of mind and renewed confidence. Our licensed therapists are ready to help.</p>
+        <div class="cta-btns">
+            <a href="#contact" class="btn btn-gold">Got Questions? Get Answers</a>
+            <a href="tel:6308967160" class="btn btn-outline-white">Call (630) 896-7160</a>
         </div>
     </section>
     </main>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-brand">Blue Moon Senior Counseling</p>
+        <p>Corporate Office: 10204 Bode St Ste B, Plainfield, IL 60585-9199</p>
+        <p>Phone: <a href="tel:18552417160">1.855.241.7160</a> | Fax: 954.324.8354 | <a href="mailto:hr@bluemoonseniorcounseling.com">hr@bluemoonseniorcounseling.com</a></p>
+        <p style="margin-top:8px;">Copyright 2020 | Blue Moon Senior Counseling | All Rights Reserved</p>
+    </footer>
+
     <!-- Floating CTA -->
-    <div class="floating-cta" data-floating-cta aria-label="Floating call-to-action">
-        <a href="#contact" class="btn btn-primary">Check Your Eligibility</a>
-        <a href="tel:6308967160" class="btn btn-secondary">Call Now</a>
+    <div class="floating-cta" data-floating-cta>
+        <a href="#contact" class="btn btn-teal">Got Questions?</a>
+        <a href="tel:6308967160" class="btn btn-gold">Call Now</a>
     </div>
 
-    <!-- JavaScript -->
+    <!-- ==================== JAVASCRIPT ==================== -->
     <script>
-        // ========================================
-        // ATTRIBUTION & SESSION MANAGEMENT
-        // ========================================
+        // Attribution (from existing subdomain LP - verbatim)
         (function() {
             var STORAGE_KEY = '_mega_attr';
-            var SESSION_KEY = '_mega_session';
-
-            // Generate unique ID (matches surf-synergy pattern)
             function generateId(prefix) {
-                if (typeof crypto !== 'undefined' && crypto.randomUUID) {
-                    return prefix + '_' + crypto.randomUUID();
-                }
+                if (typeof crypto !== 'undefined' && crypto.randomUUID) return prefix + '_' + crypto.randomUUID();
                 return prefix + '_' + 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                    var r = (Math.random() * 16) | 0;
-                    var v = c === 'x' ? r : (r & 0x3) | 0x8;
+                    var r = (Math.random() * 16) | 0, v = c === 'x' ? r : (r & 0x3) | 0x8;
                     return v.toString(16);
                 });
             }
-
-            // Get or create visitor_id (persists across sessions)
             function getVisitorId() {
                 var vid = localStorage.getItem('_mega_vid');
-                if (!vid) {
-                    vid = generateId('vis');
-                    localStorage.setItem('_mega_vid', vid);
-                }
+                if (!vid) { vid = generateId('vis'); localStorage.setItem('_mega_vid', vid); }
                 return vid;
             }
-
-            // Get or create session_id (per browser session)
             function getSessionId() {
                 var sid = sessionStorage.getItem('_mega_sid');
-                if (!sid) {
-                    sid = generateId('sess');
-                    sessionStorage.setItem('_mega_sid', sid);
-                }
+                if (!sid) { sid = generateId('sess'); sessionStorage.setItem('_mega_sid', sid); }
                 return sid;
             }
-
-            // Extract URL parameters
-            function getUrlParam(name) {
-                var params = new URLSearchParams(window.location.search);
-                return params.get(name) || '';
-            }
-
-            // Capture attribution from URL on page load and persist
+            function getUrlParam(name) { return new URLSearchParams(window.location.search).get(name) || ''; }
             function captureAttribution() {
-                var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
-                var clickKeys = ['gclid', 'gbraid', 'wbraid', 'fbclid'];
+                var keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','gbraid','wbraid','fbclid'];
                 var stored = {};
-
-                try {
-                    stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-                } catch(e) { stored = {}; }
-
+                try { stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { stored = {}; }
                 var hasNew = false;
-                utmKeys.concat(clickKeys).forEach(function(key) {
-                    var val = getUrlParam(key);
-                    if (val) {
-                        stored[key] = val;
-                        hasNew = true;
-                    }
+                keys.forEach(function(k) { var v = getUrlParam(k); if (v) { stored[k] = v; hasNew = true; } });
+                document.cookie.split(';').forEach(function(c) {
+                    var p = c.trim().split('=');
+                    if (p[0] === '_fbp' && p[1]) stored.fbp = p[1];
+                    if (p[0] === '_fbc' && p[1]) stored.fbc = p[1];
                 });
-
-                // Capture fbp and fbc from cookies
-                var cookies = document.cookie.split(';');
-                cookies.forEach(function(c) {
-                    var parts = c.trim().split('=');
-                    if (parts[0] === '_fbp' && parts[1]) stored.fbp = parts[1];
-                    if (parts[0] === '_fbc' && parts[1]) stored.fbc = parts[1];
-                });
-
-                if (hasNew) {
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
-                }
-
+                if (hasNew) localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
                 return stored;
             }
-
-            // Run attribution capture on every page load
             var attribution = captureAttribution();
-            var visitorId = getVisitorId();
-            var sessionId = getSessionId();
-
-            // Make available globally for form submission
-            window._megaAttribution = {
-                attribution: attribution,
-                visitor_id: visitorId,
-                session_id: sessionId
-            };
+            window._megaAttribution = { attribution: attribution, visitor_id: getVisitorId(), session_id: getSessionId() };
         })();
 
-        // ========================================
-        // FLOATING CTA - Hide when contact visible
-        // ========================================
+        // Floating CTA visibility
         (function() {
             var floating = document.querySelector('[data-floating-cta]');
-            var contact = document.getElementById('contact');
-
-            if (floating && contact) {
-                var observer = new IntersectionObserver(
-                    function(entries) {
-                        entries.forEach(function(entry) {
-                            floating.classList.toggle('is-hidden', entry.isIntersecting);
-                        });
-                    },
-                    { threshold: 0.2 }
-                );
-                observer.observe(contact);
+            var hero = document.getElementById('hero');
+            if (floating && hero) {
+                var obs = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(e) { floating.classList.toggle('is-hidden', e.isIntersecting); });
+                }, { threshold: 0.3 });
+                obs.observe(hero);
             }
         })();
 
-        // ========================================
-        // CHECKBOX STYLING
-        // ========================================
+        // Checkbox styling
         document.querySelectorAll('.qualifier-check input[type="checkbox"]').forEach(function(cb) {
             cb.addEventListener('change', function() {
                 var wrap = this.closest('.qualifier-check');
@@ -1513,185 +1020,118 @@
             });
         });
 
-        // ========================================
-        // FORM SUBMISSION
-        // ========================================
+        // Form submission
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-
             var form = this;
-            var submitBtn = form.querySelector('button[type="submit"]');
+            var btn = form.querySelector('.form-submit');
             var errorDiv = document.getElementById('form-error');
-            var isValid = true;
+            var valid = true;
 
-            // Reset errors
             errorDiv.textContent = '';
             form.querySelectorAll('.field-error').forEach(function(el) { el.classList.remove('field-error'); });
             form.querySelectorAll('.check-error').forEach(function(el) { el.classList.remove('check-error'); });
 
-            // Validate required text/email/tel fields
-            ['first_name', 'last_name', 'email', 'phone'].forEach(function(name) {
-                var field = form.querySelector('[name="' + name + '"]');
-                if (field && !field.value.trim()) {
-                    field.classList.add('field-error');
-                    isValid = false;
-                }
+            ['first_name','last_name','email','phone'].forEach(function(n) {
+                var f = form.querySelector('[name="'+n+'"]');
+                if (f && !f.value.trim()) { f.classList.add('field-error'); valid = false; }
             });
+            var em = form.querySelector('[name="email"]');
+            if (em && em.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)) { em.classList.add('field-error'); valid = false; }
 
-            // Validate email format
-            var emailField = form.querySelector('[name="email"]');
-            if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
-                emailField.classList.add('field-error');
-                isValid = false;
-            }
+            var c1 = document.getElementById('cb1'), c2 = document.getElementById('cb2');
+            if (!c1.checked) { document.getElementById('cb1-wrap').classList.add('check-error'); valid = false; }
+            if (!c2.checked) { document.getElementById('cb2-wrap').classList.add('check-error'); valid = false; }
 
-            // Validate checkboxes
-            var cb1 = document.getElementById('cb1');
-            var cb2 = document.getElementById('cb2');
-            if (!cb1.checked) { document.getElementById('cb1-wrap').classList.add('check-error'); isValid = false; }
-            if (!cb2.checked) { document.getElementById('cb2-wrap').classList.add('check-error'); isValid = false; }
+            var med = form.querySelector('[name="medicaretype"]');
+            var ct = form.querySelector('[name="contacttimes"]');
+            if (!med.value) { med.classList.add('field-error'); valid = false; }
+            if (!ct.value) { ct.classList.add('field-error'); valid = false; }
 
-            // Validate selects
-            var medicare = form.querySelector('[name="medicaretype"]');
-            var contactTime = form.querySelector('[name="contacttimes"]');
-            if (!medicare.value) { medicare.classList.add('field-error'); isValid = false; }
-            if (!contactTime.value) { contactTime.classList.add('field-error'); isValid = false; }
+            var msg = form.querySelector('[name="message"]');
+            if (!msg.value.trim()) { msg.classList.add('field-error'); valid = false; }
 
-            // Validate message
-            var msgField = form.querySelector('[name="message"]');
-            if (!msgField.value.trim()) {
-                msgField.classList.add('field-error');
-                isValid = false;
-            } else if (msgField.value.trim().length < 4) {
-                msgField.classList.add('field-error');
-                errorDiv.textContent = 'Please add a meaningful question/comment.';
-                isValid = false;
-            }
+            if (!valid) { errorDiv.textContent = 'Please complete all required fields.'; return; }
 
-            if (!isValid) {
-                if (!errorDiv.textContent) {
-                    errorDiv.textContent = 'Please complete all required fields.';
-                }
-                return;
-            }
+            if (btn.disabled) return;
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
 
-            // Prevent double submit
-            if (submitBtn.disabled) return;
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
-
-            // Collect form field data (includes BMSC qualifier fields)
-            var formData = {
-                first_name: form.querySelector('[name="first_name"]').value.trim(),
-                last_name: form.querySelector('[name="last_name"]').value.trim(),
-                email: form.querySelector('[name="email"]').value.trim(),
-                phone: form.querySelector('[name="phone"]').value.trim(),
-                understands_seniors_only: cb1.checked ? 'Yes' : 'No',
-                understands_therapy_only: cb2.checked ? 'Yes' : 'No',
-                medicaretype: medicare.value,
-                contacttimes: contactTime.value,
-                message: msgField.value.trim()
-            };
-
-            // Build full submission payload (same structure as existing LP)
             var attr = window._megaAttribution || {};
-            var storedAttribution = attr.attribution || {};
+            var sa = attr.attribution || {};
 
             var payload = {
                 customer_id: '93cb589f-7195-4e82-9260-2e41b0ed3bde',
                 site_id: '49148f3a-03a8-4cdf-9c3d-2e79f89383f3',
                 source_provider: 'customer-landing-blue-moon',
-                form_data: formData,
+                form_data: {
+                    first_name: form.querySelector('[name="first_name"]').value.trim(),
+                    last_name: form.querySelector('[name="last_name"]').value.trim(),
+                    email: form.querySelector('[name="email"]').value.trim(),
+                    phone: form.querySelector('[name="phone"]').value.trim(),
+                    understands_seniors_only: c1.checked ? 'Yes' : 'No',
+                    understands_therapy_only: c2.checked ? 'Yes' : 'No',
+                    medicaretype: med.value,
+                    contacttimes: ct.value,
+                    message: msg.value.trim()
+                },
                 page_url: window.location.href,
                 referrer: document.referrer || '',
                 session_id: attr.session_id || '',
                 visitor_id: attr.visitor_id || '',
-                utm_source: storedAttribution.utm_source || '',
-                utm_medium: storedAttribution.utm_medium || '',
-                utm_campaign: storedAttribution.utm_campaign || '',
-                utm_term: storedAttribution.utm_term || '',
-                utm_content: storedAttribution.utm_content || '',
-                gclid: storedAttribution.gclid || '',
-                gbraid: storedAttribution.gbraid || '',
-                wbraid: storedAttribution.wbraid || '',
-                fbclid: storedAttribution.fbclid || '',
-                fbp: storedAttribution.fbp || '',
-                fbc: storedAttribution.fbc || ''
+                utm_source: sa.utm_source||'', utm_medium: sa.utm_medium||'',
+                utm_campaign: sa.utm_campaign||'', utm_term: sa.utm_term||'',
+                utm_content: sa.utm_content||'',
+                gclid: sa.gclid||'', gbraid: sa.gbraid||'', wbraid: sa.wbraid||'',
+                fbclid: sa.fbclid||'', fbp: sa.fbp||'', fbc: sa.fbc||''
             };
 
-            // Submit to GoMega analytics endpoint (same as existing LP)
             fetch('https://analytics.gomega.ai/submission/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             })
-            .then(function(response) {
-                if (!response.ok) throw new Error('Submission failed: ' + response.status);
-                return response.json();
-            })
+            .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
             .then(function() {
-                // GTM tracking
                 if (typeof dataLayer !== 'undefined') {
-                    dataLayer.push({
-                        'event': 'form_submission',
-                        'form_name': 'referral_questions'
-                    });
+                    dataLayer.push({ 'event': 'form_submission', 'form_name': 'referral_questions' });
                 }
-
-                // Show thank-you state with referral link, video, and phone
                 document.getElementById('form-state').style.display = 'none';
                 document.getElementById('thank-you-state').classList.add('visible');
                 document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
             })
             .catch(function(err) {
-                console.error('Form submission error:', err);
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'SEND';
-
-                var note = form.querySelector('.form-note');
-                if (note) {
-                    note.textContent = 'There was an issue submitting the form. Please try again or call us at (630) 896-7160.';
-                    note.style.color = '#dc2626';
-                }
+                console.error('Form error:', err);
+                btn.disabled = false;
+                btn.textContent = 'SEND';
+                errorDiv.textContent = 'Something went wrong. Please try again or call (630) 896-7160.';
             });
         });
 
-        // Clear field errors on input
+        // Clear errors on input
         document.querySelectorAll('#contact-form input, #contact-form select, #contact-form textarea').forEach(function(el) {
-            el.addEventListener('input', function() {
-                this.classList.remove('field-error');
-                document.getElementById('form-error').textContent = '';
-            });
-            el.addEventListener('change', function() {
-                this.classList.remove('field-error');
-                document.getElementById('form-error').textContent = '';
+            ['input','change'].forEach(function(evt) {
+                el.addEventListener(evt, function() {
+                    this.classList.remove('field-error');
+                    document.getElementById('form-error').textContent = '';
+                });
             });
         });
 
-        // ========================================
-        // PHONE CLICK TRACKING
-        // ========================================
+        // Phone click tracking
         document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
             link.addEventListener('click', function() {
                 if (typeof dataLayer !== 'undefined') {
-                    dataLayer.push({
-                        'event': 'phone_click',
-                        'phone_number': this.getAttribute('href').replace('tel:', '')
-                    });
+                    dataLayer.push({ 'event': 'phone_click', 'phone_number': this.getAttribute('href').replace('tel:','') });
                 }
             });
         });
 
-        // ========================================
-        // CTA CLICK TRACKING
-        // ========================================
+        // CTA click tracking
         document.querySelectorAll('a[href="#contact"]').forEach(function(link) {
             link.addEventListener('click', function() {
                 if (typeof dataLayer !== 'undefined') {
-                    dataLayer.push({
-                        'event': 'cta_click',
-                        'cta_location': this.closest('section') ? this.closest('section').id : 'floating'
-                    });
+                    dataLayer.push({ 'event': 'cta_click', 'cta_location': this.closest('section') ? this.closest('section').className.split(' ')[0] : 'floating' });
                 }
             });
         });
