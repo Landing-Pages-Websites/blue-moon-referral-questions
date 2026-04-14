@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/01/BM_Plain.png">
     <meta property="og:type" content="website">
 
-    <!-- MegaTag Tracking -->
+    <!-- MegaTag Tracking (from existing subdomain LP) -->
     <script>
     window.MEGA_TAG_CONFIG = {
         siteKey: 'sk_mlsetqe4_p92m9vmpzii',
@@ -27,7 +27,7 @@
     <script src="https://cdn.gomega.ai/scripts/optimizer.min.js" async></script>
     <!-- End MegaTag Tracking -->
 
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager (from existing subdomain LP) -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -35,143 +35,151 @@
     })(window,document,'script','dataLayer','GTM-KX4B622D');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- CTM Call Tracking -->
+    <!-- CTM Call Tracking (from existing subdomain LP) -->
     <script src="https://572388.tctm.co/t.js" async></script>
 
-    <!-- Google Fonts - Open Sans to match BMSC site -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         /* ========================================
-           CSS CUSTOM PROPERTIES
+           CSS CUSTOM PROPERTIES (matches existing subdomain LP)
         ======================================== */
         :root {
-            --navy: #191354;
-            --navy-dark: #0B0827;
+            --primary: #191354;
+            --accent: #D97706;
+            --accent-dark: #B45309;
+            --bg: #FFFFFF;
+            --text: #191354;
+            --surface: #F9FAFB;
+            --border: rgba(25, 19, 84, 0.1);
+            --star: #FBBF24;
+            --success: #16a34a;
+            --error: #dc2626;
             --teal: #009CC9;
             --teal-dark: #007DA1;
             --gold: #EAC839;
-            --gold-dark: #D4B42E;
-            --bg-light: #F0F5FF;
-            --white: #FFFFFF;
-            --text-dark: #363844;
-            --text-medium: #4F4D60;
-            --text-light: #84879F;
-            --border-light: rgba(25, 19, 84, 0.12);
-            --success: #16a34a;
-            --error: #dc2626;
-            --font: 'Open Sans', sans-serif;
+
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --radius: 8px;
             --shadow-sm: 0 2px 8px rgba(25, 19, 84, 0.08);
             --shadow-md: 0 4px 16px rgba(25, 19, 84, 0.12);
             --shadow-lg: 0 8px 32px rgba(25, 19, 84, 0.16);
         }
 
         /* ========================================
-           RESET & BASE
+           RESET & BASE (from existing LP)
         ======================================== */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: var(--font);
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--bg-light);
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg);
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-
-        img {
-            max-width: 100%;
-            height: auto;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary);
         }
+        h1 { font-size: clamp(36px, 6vw, 56px); font-weight: 800; line-height: 1.1; }
+        h2 { font-size: clamp(28px, 5vw, 42px); margin-bottom: 24px; }
+        h3 { font-size: clamp(20px, 3vw, 28px); margin-bottom: 16px; }
+        p { font-size: 18px; line-height: 1.8; margin-bottom: 16px; }
+        em { font-style: italic; color: var(--accent); }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; }
 
-        a {
+        /* ========================================
+           BUTTONS (from existing LP)
+        ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 18px 36px;
+            font-size: 18px;
+            font-weight: 700;
             text-decoration: none;
-            color: inherit;
+            border-radius: var(--radius);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-family: var(--font-body);
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+        }
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            border-color: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--bg);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
         /* ========================================
-           HEADER / NAV
+           TRUST STRIP (from existing LP)
         ======================================== */
-        .top-bar {
-            background: var(--navy);
-            color: var(--white);
-            text-align: center;
-            padding: 10px 20px;
+        .trust-strip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 12px 20px;
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 14px;
             font-weight: 600;
+            letter-spacing: 0.5px;
         }
+        .trust-strip a { color: var(--accent); }
+        .trust-strip a:hover { text-decoration: underline; }
 
-        .top-bar a {
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        .top-bar a:hover {
-            text-decoration: underline;
-        }
-
-        .header {
-            background: var(--white);
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--border-light);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .header-phone {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 700;
-            color: var(--teal);
-            font-size: 18px;
-        }
-
-        .header-phone svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--teal);
+        @media (max-width: 768px) {
+            .trust-strip { flex-direction: column; gap: 8px; padding: 10px 16px; font-size: 13px; }
         }
 
         /* ========================================
-           HERO SECTION
+           HERO
         ======================================== */
         .hero {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-            color: var(--white);
-            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0B0827 100%);
+            color: var(--bg);
+            padding: 64px 24px 56px;
             text-align: center;
         }
-
-        .hero-inner {
+        .hero-container {
             max-width: 900px;
             margin: 0 auto;
         }
-
-        .hero-badge {
+        .hero .logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 24px;
+        }
+        .hero-eyebrow {
             display: inline-block;
-            background: var(--gold);
-            color: var(--navy);
+            background: var(--accent);
+            color: var(--bg);
             font-weight: 800;
             font-size: 13px;
             text-transform: uppercase;
@@ -180,35 +188,22 @@
             border-radius: 20px;
             margin-bottom: 20px;
         }
-
-        .hero h1 {
-            font-size: clamp(28px, 5vw, 44px);
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 em {
-            color: var(--teal);
-            font-style: normal;
-        }
-
-        .hero-subtitle {
+        .hero h1 { color: var(--bg); margin-bottom: 20px; }
+        .hero h1 em { color: var(--accent); font-style: normal; }
+        .hero-description {
             font-size: 18px;
             opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto 24px;
+            max-width: 720px;
+            margin: 0 auto 16px;
             line-height: 1.6;
         }
-
         .hero-features {
             display: flex;
             justify-content: center;
-            gap: 24px;
+            gap: 28px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 24px;
         }
-
         .hero-feature {
             display: flex;
             align-items: center;
@@ -216,175 +211,180 @@
             font-size: 15px;
             font-weight: 600;
         }
+        .hero-feature .check {
+            color: var(--accent);
+            font-size: 18px;
+        }
+        .hero-ctas {
+            margin-top: 32px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .hero .btn-secondary { color: var(--bg); border-color: var(--bg); }
+        .hero .btn-secondary:hover { background: var(--bg); color: var(--primary); }
 
-        .hero-feature svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--gold);
-            flex-shrink: 0;
+        @media (max-width: 768px) {
+            .hero { padding: 40px 16px 36px; }
+            .hero-features { flex-direction: column; align-items: center; gap: 10px; }
+            .hero-ctas { flex-direction: column; align-items: center; }
         }
 
         /* ========================================
-           MAIN LAYOUT - FORM + SIDEBAR
+           MAIN LAYOUT
         ======================================== */
         .main-content {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px 60px;
+            padding: 48px 24px 64px;
             display: grid;
-            grid-template-columns: 1fr 380px;
+            grid-template-columns: 1fr 360px;
             gap: 40px;
             align-items: start;
         }
 
-        /* ========================================
-           FORM SECTION
-        ======================================== */
-        .form-section {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 36px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-light);
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 24px 16px 100px;
+            }
         }
 
-        .form-section h2 {
+        /* ========================================
+           FORM SECTION (structure from existing LP)
+        ======================================== */
+        .form-container {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+        .form-container h2 {
+            font-size: clamp(24px, 4vw, 32px);
+            margin-bottom: 8px;
+        }
+        .form-intro {
+            color: rgba(25, 19, 84, 0.7);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        .contact-info {
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .contact-info h3 { font-size: 18px; margin-bottom: 4px; }
+        .contact-info p { font-size: 14px; color: rgba(25, 19, 84, 0.6); margin-bottom: 8px; }
+        .contact-info a {
             font-size: 24px;
             font-weight: 800;
-            color: var(--navy);
-            margin-bottom: 6px;
+            color: var(--primary);
         }
+        .contact-info a:hover { color: var(--accent); }
 
-        .form-intro {
-            color: var(--text-medium);
-            font-size: 15px;
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
-
+        form { display: flex; flex-direction: column; gap: 16px; }
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
         }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
         .form-group label {
-            display: block;
             font-size: 14px;
             font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 6px;
+            color: var(--primary);
         }
-
-        .form-group .required {
-            color: var(--error);
-        }
+        .form-group .required { color: var(--error); }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
-            width: 100%;
-            padding: 12px 14px;
-            font-size: 15px;
-            font-family: var(--font);
-            border: 2px solid var(--border-light);
-            border-radius: 8px;
-            background: var(--white);
-            color: var(--text-dark);
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 16px;
+            font-family: var(--font-body);
+            color: var(--text);
+            background: var(--bg);
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            width: 100%;
         }
-
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--teal);
-            box-shadow: 0 0 0 3px rgba(0, 156, 201, 0.15);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(25, 19, 84, 0.1);
         }
-
+        .form-group input.field-error,
+        .form-group select.field-error,
+        .form-group textarea.field-error {
+            border-color: var(--error);
+        }
         .form-group textarea {
             min-height: 100px;
             resize: vertical;
         }
 
-        .form-group input.error,
-        .form-group select.error,
-        .form-group textarea.error {
-            border-color: var(--error);
-        }
-
-        /* Checkbox qualifier styling */
-        .checkbox-group {
-            margin-bottom: 18px;
-        }
-
-        .checkbox-label {
+        /* Qualifier checkbox styling */
+        .qualifier-check {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
+            padding: 14px 16px;
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
             cursor: pointer;
-            padding: 12px 14px;
-            background: var(--bg-light);
-            border: 2px solid var(--border-light);
-            border-radius: 8px;
             transition: border-color 0.2s ease, background 0.2s ease;
         }
-
-        .checkbox-label:hover {
-            border-color: var(--teal);
+        .qualifier-check:hover { border-color: var(--primary); }
+        .qualifier-check.checked {
+            border-color: var(--primary);
+            background: rgba(25, 19, 84, 0.03);
         }
-
-        .checkbox-label.checked {
-            border-color: var(--teal);
-            background: rgba(0, 156, 201, 0.06);
-        }
-
-        .checkbox-label.error-state {
-            border-color: var(--error);
-        }
-
-        .checkbox-label input[type="checkbox"] {
+        .qualifier-check.check-error { border-color: var(--error); }
+        .qualifier-check input[type="checkbox"] {
             width: 20px;
             height: 20px;
             margin-top: 2px;
             flex-shrink: 0;
-            accent-color: var(--teal);
+            accent-color: var(--primary);
         }
-
-        .checkbox-label span {
-            font-size: 14px;
+        .qualifier-check span {
+            font-size: 15px;
             font-weight: 600;
-            color: var(--text-dark);
+            color: var(--text);
             line-height: 1.4;
         }
 
-        /* Submit button */
-        .btn-submit {
+        /* Submit button (matches existing LP) */
+        button[type="submit"] {
             width: 100%;
-            padding: 16px 32px;
+            padding: 18px 36px;
             font-size: 18px;
             font-weight: 700;
-            font-family: var(--font);
-            color: var(--navy);
-            background: var(--gold);
-            border: none;
-            border-radius: 8px;
+            font-family: var(--font-body);
+            color: var(--bg);
+            background: var(--accent);
+            border: 2px solid var(--accent);
+            border-radius: var(--radius);
             cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.2s ease, transform 0.15s ease;
+            letter-spacing: 0.5px;
         }
-
-        .btn-submit:hover {
-            background: var(--gold-dark);
-            transform: translateY(-1px);
+        button[type="submit"]:hover {
+            background: var(--accent-dark);
+            border-color: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
-
-        .btn-submit:disabled {
+        button[type="submit"]:disabled {
             opacity: 0.7;
             cursor: not-allowed;
             transform: none;
@@ -394,261 +394,196 @@
             color: var(--error);
             font-size: 14px;
             font-weight: 600;
-            margin-bottom: 12px;
             min-height: 20px;
         }
-
         .form-note {
             font-size: 13px;
-            color: var(--text-light);
+            color: rgba(25, 19, 84, 0.5);
             text-align: center;
-            margin-top: 12px;
-            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .form-container { padding: 24px 18px; }
+            .form-row { grid-template-columns: 1fr; }
         }
 
         /* ========================================
-           THANK YOU / POST-SUBMIT STATE
+           THANK YOU STATE (post-submission)
         ======================================== */
-        .thank-you-state {
-            display: none;
-            text-align: center;
-        }
+        .thank-you-state { display: none; }
+        .thank-you-state.visible { display: block; }
 
-        .thank-you-state.visible {
-            display: block;
-        }
-
-        .thank-you-icon {
-            width: 80px;
-            height: 80px;
+        .ty-icon {
+            width: 72px;
+            height: 72px;
             background: var(--success);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
+            color: var(--bg);
+            font-size: 36px;
         }
-
-        .thank-you-icon svg {
-            width: 40px;
-            height: 40px;
-            fill: var(--white);
-        }
-
         .thank-you-state h2 {
-            font-size: 28px;
-            color: var(--navy);
+            text-align: center;
             margin-bottom: 12px;
         }
-
-        .thank-you-state .ty-message {
+        .ty-message {
+            text-align: center;
             font-size: 16px;
-            color: var(--text-medium);
+            color: rgba(25, 19, 84, 0.7);
             margin-bottom: 28px;
             line-height: 1.6;
         }
-
-        .referral-cta {
-            display: inline-block;
-            padding: 16px 40px;
+        .ty-referral-btn {
+            display: block;
+            text-align: center;
+            padding: 18px 36px;
             font-size: 18px;
             font-weight: 700;
-            color: var(--white);
-            background: var(--teal);
-            border-radius: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.2s ease, transform 0.15s ease;
+            color: var(--bg);
+            background: var(--primary);
+            border-radius: var(--radius);
             margin-bottom: 28px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-
-        .referral-cta:hover {
-            background: var(--teal-dark);
-            transform: translateY(-1px);
+        .ty-referral-btn:hover {
+            background: #0B0827;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
-
-        .video-wrapper {
-            margin: 24px 0;
+        .ty-video {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow-md);
+            margin-bottom: 24px;
         }
-
-        .video-wrapper iframe {
+        .ty-video iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             border: 0;
         }
-
-        .ty-phone {
-            margin-top: 24px;
-            padding: 16px 24px;
-            background: var(--bg-light);
-            border-radius: 10px;
-            border: 2px solid var(--border-light);
+        .ty-phone-box {
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
         }
-
-        .ty-phone p {
+        .ty-phone-box p {
             font-size: 14px;
-            color: var(--text-medium);
+            color: rgba(25, 19, 84, 0.6);
             margin-bottom: 4px;
         }
-
-        .ty-phone a {
+        .ty-phone-box a {
             font-size: 24px;
             font-weight: 800;
-            color: var(--teal);
+            color: var(--primary);
         }
-
-        .ty-phone a:hover {
-            text-decoration: underline;
-        }
+        .ty-phone-box a:hover { color: var(--accent); }
 
         /* ========================================
            SIDEBAR
         ======================================== */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+        .sidebar { display: flex; flex-direction: column; gap: 24px; }
 
-        /* Testimonial card */
         .testimonial-card {
-            background: var(--white);
+            background: var(--surface);
             border-radius: 12px;
             padding: 24px;
             box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
         }
-
-        .testimonial-card .quote-mark {
-            font-size: 40px;
-            line-height: 1;
-            color: var(--teal);
-            font-weight: 800;
-            margin-bottom: 8px;
+        .testimonial-card .stars {
+            color: var(--star);
+            font-size: 18px;
+            margin-bottom: 10px;
         }
-
         .testimonial-card blockquote {
             font-size: 15px;
             font-style: italic;
-            color: var(--text-medium);
+            color: rgba(25, 19, 84, 0.75);
             line-height: 1.6;
             margin-bottom: 12px;
         }
-
         .testimonial-card .attribution {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--navy);
-        }
-
-        /* Referred-by logos */
-        .referred-section {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
-            text-align: center;
-        }
-
-        .referred-section h3 {
             font-size: 14px;
             font-weight: 700;
-            color: var(--text-light);
+            color: var(--primary);
+        }
+
+        .referred-section {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+        .referred-section h3 {
+            font-size: 13px;
+            font-weight: 700;
+            color: rgba(25, 19, 84, 0.5);
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 16px;
         }
-
         .logo-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
             align-items: center;
         }
-
         .logo-grid img {
             width: 100%;
             max-height: 50px;
             object-fit: contain;
-            opacity: 0.7;
-            transition: opacity 0.2s ease;
+            opacity: 0.65;
         }
 
-        .logo-grid img:hover {
-            opacity: 1;
-        }
-
-        /* Specialties card */
         .specialties-card {
-            background: var(--white);
+            background: var(--surface);
             border-radius: 12px;
             padding: 24px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
         }
-
         .specialties-card h3 {
             font-size: 16px;
             font-weight: 800;
-            color: var(--navy);
             margin-bottom: 14px;
         }
-
         .specialties-list {
             list-style: none;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 6px 12px;
         }
-
         .specialties-list li {
             font-size: 13px;
-            color: var(--text-medium);
+            color: rgba(25, 19, 84, 0.75);
             display: flex;
             align-items: center;
             gap: 6px;
         }
-
         .specialties-list li::before {
             content: '';
-            width: 6px;
-            height: 6px;
-            background: var(--teal);
+            width: 6px; height: 6px;
+            background: var(--accent);
             border-radius: 50%;
             flex-shrink: 0;
         }
 
-        /* Why Choose Us card */
         .why-card {
-            background: var(--navy);
+            background: var(--primary);
             border-radius: 12px;
             padding: 24px;
-            color: var(--white);
+            color: var(--bg);
         }
-
-        .why-card h3 {
-            font-size: 16px;
-            font-weight: 800;
-            margin-bottom: 14px;
-        }
-
-        .why-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
+        .why-card h3 { color: var(--bg); font-size: 16px; font-weight: 800; margin-bottom: 14px; }
+        .why-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
         .why-list li {
             display: flex;
             align-items: center;
@@ -656,339 +591,229 @@
             font-size: 14px;
             font-weight: 600;
         }
-
-        .why-list li svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--gold);
-            flex-shrink: 0;
-        }
+        .why-list li .check { color: var(--accent); font-size: 16px; }
 
         /* ========================================
-           FOOTER
+           FOOTER (from existing LP)
         ======================================== */
         .footer {
-            background: var(--navy-dark);
+            background: #0B0827;
             color: rgba(255, 255, 255, 0.6);
             text-align: center;
             padding: 24px 20px;
             font-size: 13px;
         }
-
-        .footer a {
-            color: var(--teal);
-        }
-
-        .footer-brand {
-            color: var(--white);
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
+        .footer a { color: var(--accent); }
+        .footer-brand { color: var(--bg); font-weight: 700; margin-bottom: 4px; }
 
         /* ========================================
-           FLOATING CTA (mobile)
+           FLOATING CTA (from existing LP)
         ======================================== */
         .floating-cta {
-            display: none;
             position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            padding: 12px 16px;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            bottom: 24px;
+            right: 24px;
+            display: flex;
+            gap: 12px;
             z-index: 200;
-            gap: 10px;
-            border-top: 2px solid var(--gold);
+            background: var(--bg);
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            border: 2px solid var(--border);
         }
-
-        .floating-cta .btn-float {
-            flex: 1;
-            text-align: center;
-            padding: 14px 16px;
-            font-size: 15px;
-            font-weight: 700;
-            border-radius: 8px;
-            font-family: var(--font);
-            border: none;
-            cursor: pointer;
-        }
-
-        .floating-cta .btn-float.primary {
-            background: var(--gold);
-            color: var(--navy);
-        }
-
-        .floating-cta .btn-float.secondary {
-            background: var(--teal);
-            color: var(--white);
-        }
-
         .floating-cta.is-hidden {
             opacity: 0;
             pointer-events: none;
-            transform: translateY(100%);
-            transition: all 0.3s ease;
+            transform: translateY(20px);
         }
 
-        /* ========================================
-           RESPONSIVE
-        ======================================== */
-        @media (max-width: 900px) {
-            .main-content {
-                grid-template-columns: 1fr;
-                padding: 24px 16px 100px;
-            }
-
-            .sidebar {
-                order: -1;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 40px 16px 32px;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .hero-subtitle {
-                font-size: 16px;
-            }
-
-            .hero-features {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-
+        @media (max-width: 768px) {
             .floating-cta {
-                display: flex;
+                left: 16px;
+                right: 16px;
+                bottom: 16px;
+                flex-direction: column;
+                padding: 16px;
             }
-
-            .form-section {
-                padding: 24px 18px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .top-bar {
-                font-size: 12px;
-                padding: 8px 12px;
-            }
-
-            .header-phone {
-                font-size: 15px;
-            }
-
-            .header-logo img {
-                height: 40px;
-            }
-
-            .logo-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 8px;
-            }
-
-            .specialties-list {
-                grid-template-columns: 1fr;
+            .floating-cta .btn {
+                width: 100%;
+                text-align: center;
+                padding: 16px 24px;
             }
         }
 
         /* ========================================
            ACCESSIBILITY
         ======================================== */
-        *:focus-visible {
-            outline: 3px solid var(--teal);
-            outline-offset: 2px;
-        }
-
+        *:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
         .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
+            position: absolute; width: 1px; height: 1px; padding: 0;
+            margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+            white-space: nowrap; border: 0;
         }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) - from existing LP -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX4B622D"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        Help is on the way! <a href="tel:6308967160">Call Now: (630) 896-7160</a>
+    <!-- Trust Strip (from existing LP) -->
+    <div class="trust-strip">
+        <span><a href="tel:6308967160" class="trust-phone">Call (630) 896-7160</a></span>
+        <span>Licensed Clinical Social Workers</span>
+        <span>Medicare Accepted</span>
     </div>
 
-    <!-- Header -->
-    <header class="header">
-        <a href="https://bluemoonseniorcounseling.com/" class="header-logo" aria-label="Blue Moon Senior Counseling Home">
-            <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/01/BM_Plain.png" alt="Blue Moon Senior Counseling Logo" width="150" height="75" loading="eager">
-        </a>
-        <a href="tel:6308967160" class="header-phone">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.66.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.66 1 1 0 01-.25 1.01l-2.22 2.12z"/></svg>
-            (630) 896-7160
-        </a>
-    </header>
-
+    <main>
     <!-- Hero Section -->
     <section class="hero" id="hero" aria-labelledby="hero-heading">
-        <div class="hero-inner">
-            <div class="hero-badge">Help is on the way!</div>
+        <div class="hero-container">
+            <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/01/BM_Plain.png" alt="Blue Moon Senior Counseling Logo" class="logo" width="200" height="100" loading="eager">
+            <span class="hero-eyebrow">Help is on the way!</span>
             <h1 id="hero-heading">Senior Counseling from the <em>Comfort of Your Home</em></h1>
-            <p class="hero-subtitle">Tele-Therapy Services. Beneficial for both seniors and caregivers. Medicare beneficiaries don't need a doctor's referral.</p>
+            <p class="hero-description">Tele-Therapy Services. Beneficial for both seniors and caregivers. Medicare beneficiaries don't need a doctor's referral.</p>
             <div class="hero-features">
-                <div class="hero-feature">
-                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                    Covered by Medicare
-                </div>
-                <div class="hero-feature">
-                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                    Phone / Video / Chat
-                </div>
-                <div class="hero-feature">
-                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                    Licensed Therapists
-                </div>
+                <div class="hero-feature"><span class="check">&#10004;</span> Covered by Medicare</div>
+                <div class="hero-feature"><span class="check">&#10004;</span> Phone / Video / Chat</div>
+                <div class="hero-feature"><span class="check">&#10004;</span> Licensed Therapists</div>
+            </div>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn btn-primary">Got Questions? Get Answers</a>
+                <a href="tel:6308967160" class="btn btn-secondary">Call (630) 896-7160</a>
             </div>
         </div>
     </section>
 
     <!-- Main Content: Form + Sidebar -->
-    <div class="main-content" id="form-area">
-        <!-- Form Section -->
-        <section class="form-section" id="contact" aria-labelledby="form-heading">
-            <!-- FORM STATE -->
-            <div id="form-state">
-                <h2 id="form-heading">Got Questions? We've Got Answers!</h2>
-                <p class="form-intro">Our admission specialists are standing by to answer any questions you may have. Fill out the form below and our team will reach out to you.</p>
+    <div class="main-content">
+        <!-- Form Column -->
+        <section id="contact" aria-labelledby="form-heading">
+            <div class="form-container">
+                <!-- FORM STATE -->
+                <div id="form-state">
+                    <h2 id="form-heading">Got Questions? We've Got Answers!</h2>
+                    <p class="form-intro">Our admission specialists are standing by to answer any questions you may have. Office hours are from 8:30 AM CST to 6:30 PM CST, Monday through Friday.</p>
 
-                <form id="contact-form" novalidate>
-                    <input type="hidden" name="customer_id" value="93cb589f-7195-4e82-9260-2e41b0ed3bde">
-                    <input type="hidden" name="site_id" value="49148f3a-03a8-4cdf-9c3d-2e79f89383f3">
-                    <!-- Honeypot -->
-                    <div style="position:absolute;left:-9999px;" aria-hidden="true">
-                        <input type="text" name="firstname" tabindex="-1" autocomplete="off">
+                    <div class="contact-info">
+                        <h3>Prefer to Call?</h3>
+                        <p>Our team is ready to help</p>
+                        <a href="tel:6308967160">(630) 896-7160</a>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="first_name">First Name <span class="required">*</span></label>
-                            <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                    <form id="contact-form" novalidate>
+                        <!-- Hidden fields from existing LP -->
+                        <input type="hidden" name="customer_id" value="93cb589f-7195-4e82-9260-2e41b0ed3bde">
+                        <input type="hidden" name="site_id" value="49148f3a-03a8-4cdf-9c3d-2e79f89383f3">
+
+                        <!-- Honeypot (anti-spam) -->
+                        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                            <input type="text" name="firstname" tabindex="-1" autocomplete="off">
                         </div>
-                        <div class="form-group">
-                            <label for="last_name">Last Name <span class="required">*</span></label>
-                            <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name">First Name <span class="required">*</span></label>
+                                <input type="text" id="first_name" name="first_name" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last Name <span class="required">*</span></label>
+                                <input type="text" id="last_name" name="last_name" required aria-required="true">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="email">Email <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" placeholder="Email Address" required>
-                    </div>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true">
+                        </div>
 
-                    <div class="form-group">
-                        <label for="phone">Phone <span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                    </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required aria-required="true">
+                        </div>
 
-                    <!-- Qualifier Checkboxes -->
-                    <div class="checkbox-group">
-                        <label class="checkbox-label" id="cb1-label">
+                        <!-- Qualifier Checkboxes (from BMSC referral questions page) -->
+                        <label class="qualifier-check" id="cb1-wrap">
                             <input type="checkbox" name="understands_seniors_only" id="cb1" required>
                             <span>I understand that BMSC only provides counseling services for seniors</span>
                         </label>
-                    </div>
 
-                    <div class="checkbox-group">
-                        <label class="checkbox-label" id="cb2-label">
+                        <label class="qualifier-check" id="cb2-wrap">
                             <input type="checkbox" name="understands_therapy_only" id="cb2" required>
                             <span>You understand Blue Moon provides therapy only, not other services</span>
                         </label>
-                    </div>
 
-                    <!-- Medicare Qualifier -->
-                    <div class="form-group">
-                        <label for="medicaretype">Do you have traditional Medicare? <span class="required">*</span></label>
-                        <select id="medicaretype" name="medicaretype" required>
-                            <option value="">Select an option...</option>
-                            <option value="Yes">Yes</option>
-                            <option value="Not Sure">Not sure</option>
-                        </select>
-                    </div>
+                        <!-- Medicare Qualifier (from BMSC referral questions page) -->
+                        <div class="form-group">
+                            <label for="medicaretype">Do you have traditional Medicare? <span class="required">*</span></label>
+                            <select id="medicaretype" name="medicaretype" required aria-required="true">
+                                <option value="">Select an option...</option>
+                                <option value="Yes">Yes</option>
+                                <option value="Not Sure">Not sure</option>
+                            </select>
+                        </div>
 
-                    <!-- Best Contact Time -->
-                    <div class="form-group">
-                        <label for="contacttimes">What is the best time to contact you? <span class="required">*</span></label>
-                        <select id="contacttimes" name="contacttimes" required>
-                            <option value="">Select an option...</option>
-                            <option value="Morning">Morning</option>
-                            <option value="Afternoon">Afternoon</option>
-                        </select>
-                    </div>
+                        <!-- Best Contact Time (from BMSC referral questions page) -->
+                        <div class="form-group">
+                            <label for="contacttimes">What is the best time to contact you? <span class="required">*</span></label>
+                            <select id="contacttimes" name="contacttimes" required aria-required="true">
+                                <option value="">Select an option...</option>
+                                <option value="Morning">Morning</option>
+                                <option value="Afternoon">Afternoon</option>
+                            </select>
+                        </div>
 
-                    <!-- Message Box -->
-                    <div class="form-group">
-                        <label for="message">Questions/Comments <span class="required">*</span></label>
-                        <textarea id="message" name="message" placeholder="Tell us how we can help you or someone you know..." required></textarea>
-                    </div>
+                        <!-- Message Box (from BMSC referral questions page) -->
+                        <div class="form-group">
+                            <label for="message">Questions/Comments <span class="required">*</span></label>
+                            <textarea id="message" name="message" placeholder="Tell us how we can help you or someone you know..." required aria-required="true"></textarea>
+                        </div>
 
-                    <div class="form-error" id="form-error" role="alert" aria-live="polite"></div>
+                        <div class="form-error" id="form-error" role="alert" aria-live="polite"></div>
 
-                    <button type="submit" class="btn-submit" id="lead-submit">SEND</button>
+                        <button type="submit" id="lead-submit">SEND</button>
 
-                    <p class="form-note">By submitting this form, you agree to be contacted by Blue Moon Senior Counseling. Your information is kept confidential.</p>
-                </form>
-            </div>
-
-            <!-- THANK YOU STATE (shown after submission) -->
-            <div class="thank-you-state" id="thank-you-state">
-                <div class="thank-you-icon">
-                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                </div>
-                <h2>Thank You!</h2>
-                <p class="ty-message">We received your information and a team member will be reaching out to you soon. In the meantime, if you are ready to get started, you can fill out a referral form below, watch our video to learn more, or call our office directly.</p>
-
-                <a href="https://bluemoonseniorcounseling.com/referral-for-senior-counseling-new/" class="referral-cta" target="_blank" rel="noopener">Fill Out a Referral Form</a>
-
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/ge-w1SYxiqs" title="Blue Moon Senior Counseling - Telehealth Services" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                        <p class="form-note">By submitting this form, you agree to be contacted by Blue Moon Senior Counseling. Your information is kept confidential.</p>
+                    </form>
                 </div>
 
-                <div class="ty-phone">
-                    <p>Prefer to speak with someone now?</p>
-                    <a href="tel:6308967160">(630) 896-7160</a>
+                <!-- THANK YOU STATE (shown after form submission) -->
+                <div class="thank-you-state" id="thank-you-state">
+                    <div class="ty-icon">&#10004;</div>
+                    <h2>Thank You!</h2>
+                    <p class="ty-message">We received your information and a team member will be reaching out to you soon. In the meantime, if you are ready to get started, you can fill out a referral form below, watch our video to learn more, or call our office directly.</p>
+
+                    <a href="https://bluemoonseniorcounseling.com/referral-for-senior-counseling-new/" class="ty-referral-btn" target="_blank" rel="noopener">Fill Out a Referral Form</a>
+
+                    <div class="ty-video">
+                        <iframe src="https://www.youtube.com/embed/ge-w1SYxiqs" title="Blue Moon Senior Counseling - Telehealth Services" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+
+                    <div class="ty-phone-box">
+                        <p>Prefer to speak with someone now?</p>
+                        <a href="tel:6308967160">(630) 896-7160</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Sidebar -->
         <aside class="sidebar">
-            <!-- Testimonials -->
             <div class="testimonial-card">
-                <div class="quote-mark">"</div>
-                <blockquote>Using Blue Moon LCSW's has been an important service we offer our patients... I would highly recommend using their services.</blockquote>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Using Blue Moon LCSW's has been an important service we offer our patients... I would highly recommend using their services."</blockquote>
                 <div class="attribution">- Scott S, Home Health Agency</div>
             </div>
 
             <div class="testimonial-card">
-                <div class="quote-mark">"</div>
-                <blockquote>Blue Moon Counseling has been a wonderful find in my life... and my Mom's. You are kind, caring... and make a difference in so many ways.</blockquote>
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <blockquote>"Blue Moon Counseling has been a wonderful find in my life... and my Mom's. You are kind, caring... and make a difference in so many ways."</blockquote>
                 <div class="attribution">- Deb W, Fort Lauderdale, FL</div>
             </div>
 
-            <!-- Referred by logos -->
             <div class="referred-section">
                 <h3>Referred to by National Leaders</h3>
                 <div class="logo-grid">
@@ -1000,56 +825,43 @@
                 </div>
             </div>
 
-            <!-- Specialties -->
             <div class="specialties-card">
                 <h3>Our Therapists Specialize In</h3>
                 <ul class="specialties-list">
-                    <li>Depression</li>
-                    <li>Anxiety Disorders</li>
-                    <li>Isolation</li>
+                    <li>Depression &amp; Anxiety</li>
+                    <li>Isolation &amp; Loneliness</li>
                     <li>Bereavement</li>
                     <li>Adjustment Disorders</li>
                     <li>Agoraphobia</li>
                     <li>Elderly Abuse</li>
                     <li>Caregiver Burnout</li>
                     <li>Coping with Illness</li>
-                    <li>Grief and Loss</li>
+                    <li>Grief &amp; Loss</li>
                     <li>PTSD Support</li>
                     <li>Geriatric Therapy</li>
+                    <li>End of Life Therapy</li>
                 </ul>
             </div>
 
-            <!-- Why Choose Us -->
             <div class="why-card">
                 <h3>Why Choose Us?</h3>
                 <ul class="why-list">
-                    <li>
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                        Covered by Medicare
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                        Top-Rated Therapists
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                        Available Nationwide
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                        HIPAA Compliant
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                        14+ Years Experience
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
-                        100% Licensed Therapists
-                    </li>
+                    <li><span class="check">&#10004;</span> Covered by Medicare</li>
+                    <li><span class="check">&#10004;</span> Top-Rated Therapists</li>
+                    <li><span class="check">&#10004;</span> Available Nationwide</li>
+                    <li><span class="check">&#10004;</span> HIPAA Compliant</li>
+                    <li><span class="check">&#10004;</span> 14+ Years Experience</li>
+                    <li><span class="check">&#10004;</span> 100% Licensed Therapists</li>
                 </ul>
             </div>
         </aside>
+    </div>
+    </main>
+
+    <!-- Floating CTA (from existing LP) -->
+    <div class="floating-cta" data-floating-cta aria-label="Floating call-to-action">
+        <a href="#contact" class="btn btn-primary">Got Questions?</a>
+        <a href="tel:6308967160" class="btn btn-secondary">Call Now</a>
     </div>
 
     <!-- Footer -->
@@ -1060,16 +872,11 @@
         <p style="margin-top:8px;">Copyright 2020 | Blue Moon Senior Counseling | All Rights Reserved</p>
     </footer>
 
-    <!-- Floating CTA (mobile) -->
-    <div class="floating-cta" id="floating-cta" aria-label="Quick actions">
-        <a href="#contact" class="btn-float primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">Get Started</a>
-        <a href="tel:6308967160" class="btn-float secondary">Call Now</a>
-    </div>
-
-    <!-- JavaScript -->
+    <!-- JavaScript (attribution, form submission, tracking from existing subdomain LP) -->
     <script>
         // ========================================
         // ATTRIBUTION & SESSION MANAGEMENT
+        // (verbatim from existing subdomain LP)
         // ========================================
         (function() {
             var STORAGE_KEY = '_mega_attr';
@@ -1089,17 +896,17 @@
             function getVisitorId() {
                 var vid = localStorage.getItem('_mega_vid');
                 if (!vid) {
-                    vid = generateId('vid');
+                    vid = generateId('vis');
                     localStorage.setItem('_mega_vid', vid);
                 }
                 return vid;
             }
 
             function getSessionId() {
-                var sid = sessionStorage.getItem(SESSION_KEY);
+                var sid = sessionStorage.getItem('_mega_sid');
                 if (!sid) {
-                    sid = generateId('sid');
-                    sessionStorage.setItem(SESSION_KEY, sid);
+                    sid = generateId('sess');
+                    sessionStorage.setItem('_mega_sid', sid);
                 }
                 return sid;
             }
@@ -1153,21 +960,13 @@
         })();
 
         // ========================================
-        // CHECKBOX STYLING
-        // ========================================
-        document.querySelectorAll('.checkbox-label input[type="checkbox"]').forEach(function(cb) {
-            cb.addEventListener('change', function() {
-                this.closest('.checkbox-label').classList.toggle('checked', this.checked);
-                this.closest('.checkbox-label').classList.remove('error-state');
-            });
-        });
-
-        // ========================================
-        // FLOATING CTA VISIBILITY
+        // FLOATING CTA - Hide when contact visible
+        // (from existing LP)
         // ========================================
         (function() {
-            var floating = document.getElementById('floating-cta');
+            var floating = document.querySelector('[data-floating-cta]');
             var contact = document.getElementById('contact');
+
             if (floating && contact) {
                 var observer = new IntersectionObserver(
                     function(entries) {
@@ -1182,27 +981,42 @@
         })();
 
         // ========================================
-        // FORM VALIDATION & SUBMISSION
+        // CHECKBOX STYLING
+        // ========================================
+        document.querySelectorAll('.qualifier-check input[type="checkbox"]').forEach(function(cb) {
+            cb.addEventListener('change', function() {
+                var wrap = this.closest('.qualifier-check');
+                wrap.classList.toggle('checked', this.checked);
+                wrap.classList.remove('check-error');
+            });
+        });
+
+        // ========================================
+        // FORM SUBMISSION
+        // (uses same endpoint, payload structure, and tracking from existing LP)
         // ========================================
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
             var form = this;
-            var submitBtn = document.getElementById('lead-submit');
+            var submitBtn = form.querySelector('button[type="submit"]');
             var errorDiv = document.getElementById('form-error');
             var isValid = true;
 
             // Reset errors
             errorDiv.textContent = '';
-            form.querySelectorAll('.error').forEach(function(el) { el.classList.remove('error'); });
-            form.querySelectorAll('.error-state').forEach(function(el) { el.classList.remove('error-state'); });
+            form.querySelectorAll('.field-error').forEach(function(el) { el.classList.remove('field-error'); });
+            form.querySelectorAll('.check-error').forEach(function(el) { el.classList.remove('check-error'); });
+
+            // Honeypot check
+            var honeypot = form.querySelector('[name="firstname"]');
+            if (honeypot && honeypot.value) { return; }
 
             // Validate required text/email/tel fields
-            var requiredFields = ['first_name', 'last_name', 'email', 'phone', 'message'];
-            requiredFields.forEach(function(name) {
+            ['first_name', 'last_name', 'email', 'phone'].forEach(function(name) {
                 var field = form.querySelector('[name="' + name + '"]');
                 if (field && !field.value.trim()) {
-                    field.classList.add('error');
+                    field.classList.add('field-error');
                     isValid = false;
                 }
             });
@@ -1210,40 +1024,31 @@
             // Validate email format
             var emailField = form.querySelector('[name="email"]');
             if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
-                emailField.classList.add('error');
+                emailField.classList.add('field-error');
                 isValid = false;
             }
 
             // Validate checkboxes
             var cb1 = document.getElementById('cb1');
             var cb2 = document.getElementById('cb2');
-            if (!cb1.checked) {
-                document.getElementById('cb1-label').classList.add('error-state');
-                isValid = false;
-            }
-            if (!cb2.checked) {
-                document.getElementById('cb2-label').classList.add('error-state');
-                isValid = false;
-            }
+            if (!cb1.checked) { document.getElementById('cb1-wrap').classList.add('check-error'); isValid = false; }
+            if (!cb2.checked) { document.getElementById('cb2-wrap').classList.add('check-error'); isValid = false; }
 
             // Validate selects
             var medicare = form.querySelector('[name="medicaretype"]');
             var contactTime = form.querySelector('[name="contacttimes"]');
-            if (!medicare.value) { medicare.classList.add('error'); isValid = false; }
-            if (!contactTime.value) { contactTime.classList.add('error'); isValid = false; }
+            if (!medicare.value) { medicare.classList.add('field-error'); isValid = false; }
+            if (!contactTime.value) { contactTime.classList.add('field-error'); isValid = false; }
 
-            // Validate message length
+            // Validate message
             var msgField = form.querySelector('[name="message"]');
-            if (msgField && msgField.value.trim().length > 0 && msgField.value.trim().length < 4) {
-                msgField.classList.add('error');
+            if (!msgField.value.trim()) {
+                msgField.classList.add('field-error');
+                isValid = false;
+            } else if (msgField.value.trim().length < 4) {
+                msgField.classList.add('field-error');
                 errorDiv.textContent = 'Please add a meaningful question/comment.';
                 isValid = false;
-            }
-
-            // Honeypot check
-            var honeypot = form.querySelector('[name="firstname"]');
-            if (honeypot && honeypot.value) {
-                return; // bot detected, silently fail
             }
 
             if (!isValid) {
@@ -1256,9 +1061,9 @@
             // Prevent double submit
             if (submitBtn.disabled) return;
             submitBtn.disabled = true;
-            submitBtn.textContent = 'SUBMITTING...';
+            submitBtn.textContent = 'Submitting...';
 
-            // Collect form data
+            // Collect form data (includes BMSC qualifier fields)
             var formData = {
                 first_name: form.querySelector('[name="first_name"]').value.trim(),
                 last_name: form.querySelector('[name="last_name"]').value.trim(),
@@ -1271,7 +1076,7 @@
                 message: msgField.value.trim()
             };
 
-            // Build payload
+            // Build full submission payload (same structure as existing LP)
             var attr = window._megaAttribution || {};
             var storedAttribution = attr.attribution || {};
 
@@ -1297,7 +1102,7 @@
                 fbc: storedAttribution.fbc || ''
             };
 
-            // Submit to GoMega analytics endpoint
+            // Submit to GoMega analytics endpoint (same as existing LP)
             fetch('https://analytics.gomega.ai/submission/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -1308,7 +1113,7 @@
                 return response.json();
             })
             .then(function() {
-                // GTM tracking
+                // GTM tracking (same as existing LP)
                 if (typeof dataLayer !== 'undefined') {
                     dataLayer.push({
                         'event': 'form_submission',
@@ -1316,38 +1121,38 @@
                     });
                 }
 
-                // Mark submitted in sessionStorage to prevent re-submit
-                sessionStorage.setItem('bmleadsubmit', formData.first_name);
-
-                // Transition to thank-you state
+                // Transition to thank-you state with referral link, video, phone
                 document.getElementById('form-state').style.display = 'none';
                 document.getElementById('thank-you-state').classList.add('visible');
-
-                // Scroll to the top of the form section
                 document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
             })
             .catch(function(err) {
                 console.error('Form submission error:', err);
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'SEND';
-                errorDiv.textContent = 'There was an issue submitting the form. Please try again or call us at (630) 896-7160.';
+
+                var note = form.querySelector('.form-note');
+                if (note) {
+                    note.textContent = 'There was an issue submitting the form. Please try again or call us at (630) 896-7160.';
+                    note.style.color = 'var(--error)';
+                }
             });
         });
 
-        // Clear error styling on input
+        // Clear field errors on input (UX)
         document.querySelectorAll('#contact-form input, #contact-form select, #contact-form textarea').forEach(function(el) {
             el.addEventListener('input', function() {
-                this.classList.remove('error');
+                this.classList.remove('field-error');
                 document.getElementById('form-error').textContent = '';
             });
             el.addEventListener('change', function() {
-                this.classList.remove('error');
+                this.classList.remove('field-error');
                 document.getElementById('form-error').textContent = '';
             });
         });
 
         // ========================================
-        // PHONE CLICK TRACKING
+        // PHONE CLICK TRACKING (from existing LP)
         // ========================================
         document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
             link.addEventListener('click', function() {
@@ -1361,7 +1166,7 @@
         });
 
         // ========================================
-        // CTA CLICK TRACKING
+        // CTA CLICK TRACKING (from existing LP)
         // ========================================
         document.querySelectorAll('a[href="#contact"]').forEach(function(link) {
             link.addEventListener('click', function() {
