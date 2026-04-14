@@ -293,8 +293,35 @@
         /* Qualifying question highlight */
         .qualifying-question {
             background: rgba(0,156,201,0.06);
-            padding: 20px;
+            padding: 16px 20px;
             border-radius: 6px;
+            border: none;
+        }
+        .qualifying-question label { font-size: 14px; margin-bottom: 8px; }
+
+        /* Checkbox rows */
+        .checkbox-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 0;
+        }
+        .checkbox-row input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            accent-color: var(--teal);
+            cursor: pointer;
+        }
+        .checkbox-row label {
+            font-size: 14px;
+            color: var(--text);
+            cursor: pointer;
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+        .qualifying-question select {
             border: 2px solid var(--teal);
         }
         .qualifying-question label { font-size: 14px; margin-bottom: 10px; }
@@ -788,7 +815,7 @@
             <!-- FORM -->
             <div class="form-card" id="contact">
                 <div id="form-state">
-                    <h2>Check Your Eligibility</h2>
+                    <h2>Got Questions? We've Got Answers!</h2>
                     <form id="contact-form" novalidate>
                         <input type="hidden" name="customer_id" value="93cb589f-7195-4e82-9260-2e41b0ed3bde">
                         <input type="hidden" name="site_id" value="49148f3a-03a8-4cdf-9c3d-2e79f89383f3">
@@ -796,38 +823,59 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="first_name">First Name <span class="req">*</span></label>
-                                <input type="text" id="first_name" name="first_name" required>
+                                <input type="text" id="first_name" name="first_name" placeholder="First Name*" required>
                             </div>
                             <div class="form-group">
                                 <label for="last_name">Last Name <span class="req">*</span></label>
-                                <input type="text" id="last_name" name="last_name" required>
+                                <input type="text" id="last_name" name="last_name" placeholder="Last Name*" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email Address <span class="req">*</span></label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" placeholder="Email*" required>
                         </div>
 
                         <div class="form-group">
                             <label for="phone">Phone Number <span class="req">*</span></label>
-                            <input type="tel" id="phone" name="phone" required>
+                            <input type="tel" id="phone" name="phone" placeholder="Phone*" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Questions/Comments <span class="req">*</span></label>
+                            <textarea id="message" name="message" placeholder="Questions/Comments*" required></textarea>
+                        </div>
+
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="requiredcheckbox" name="requiredcheckbox" required>
+                            <label for="requiredcheckbox">I understand that BMSC only provides counseling services for seniors</label>
+                        </div>
+
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="requiredcheckbox3" name="requiredcheckbox3" required>
+                            <label for="requiredcheckbox3">You understand Blue Moon provides therapy only, not other services</label>
                         </div>
 
                         <div class="form-group qualifying-question">
-                            <label for="medicare_coverage">At Blue Moon Senior Counseling, we accept certain Medicare plans. What type of Medicare coverage do you have? <span class="req">*</span></label>
-                            <select id="medicare_coverage" name="medicare_coverage" required>
-                                <option value="">Please select...</option>
-                                <option value="original-medicare-part-b">Original Medicare (red/white/blue card) with Part B</option>
-                                <option value="medicare-advantage-ppo">Medicare Advantage PPO</option>
-                                <option value="medicare-advantage-hmo">Medicare Advantage HMO</option>
-                                <option value="other-insurance">I have health insurance, but it's not Medicare</option>
-                                <option value="not-sure">Not sure / I don't know</option>
+                            <label for="medicaretype">Do you have traditional medicare? <span class="req">*</span></label>
+                            <select id="medicaretype" name="medicaretype" required>
+                                <option value="">Select an option..</option>
+                                <option value="Yes">Yes</option>
+                                <option value="Not Sure">Not sure</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group qualifying-question">
+                            <label for="contacttimes">What is the best time to contact you? <span class="req">*</span></label>
+                            <select id="contacttimes" name="contacttimes" required>
+                                <option value="">Select an option..</option>
+                                <option value="Morning">Morning</option>
+                                <option value="Afternoon">Afternoon</option>
                             </select>
                         </div>
 
                         <div class="form-error-msg" id="form-error" role="alert" aria-live="polite"></div>
-                        <button type="submit" class="form-submit" id="lead-submit">Check Your Eligibility</button>
+                        <button type="submit" class="form-submit" id="lead-submit">SEND</button>
                         <p class="form-note">By submitting this form, you agree to be contacted by Blue Moon Senior Counseling. Your information is kept confidential.</p>
                     </form>
                 </div>
@@ -884,7 +932,7 @@
             <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2023/04/Phone-Therapist.png" alt="Senior using telehealth therapy on phone" class="telehealth-img" width="500" height="400" loading="lazy">
             <div class="telehealth-content">
                 <h2>Tele-Therapy Senior Counseling Service</h2>
-                <p>Telehealth is a Medicare Part B covered benefit (we also accept PPOs and private pay). Telehealth allows you to connect with a licensed therapist in real-time via live chat, phone, or video call. No travel, no waiting rooms, just compassionate care from the comfort of your home.</p>
+                <p>Telehealth is a Medicare Part B covered benefit (we also accept PPO's and private pay). Telehealth allows you to connect with a licensed therapist in real-time via live chat, phone, or video call.</p>
                 <div class="benefits-grid">
                     <div class="benefit-item">
                         <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
@@ -922,7 +970,6 @@
     <!-- ==================== CTA BAND ==================== -->
     <section class="cta-band">
         <h2>Got Questions? We've Got Answers!</h2>
-        <p>Our admission specialists are standing by. Office hours: 8:30 AM - 6:30 PM CST, Monday through Friday.</p>
         <a href="#contact" class="btn btn-gold">Get Your Questions Answered</a>
     </section>
 
@@ -999,7 +1046,7 @@
     <!-- ==================== BOTTOM CTA ==================== -->
     <section class="bottom-cta">
         <h2>Reclaim Your Life or Provide <em>Hope to a Senior</em> You Know Today</h2>
-        <p>Take the first step toward peace of mind and renewed confidence. Our licensed therapists are ready to help.</p>
+        
         <div class="cta-btns">
             <a href="#contact" class="btn btn-gold">Got Questions? Get Answers</a>
             <a href="tel:6308967160" class="btn btn-outline-white">Call (630) 896-7160</a>
@@ -1073,7 +1120,7 @@
             }
         })();
 
-        // Form submission (same fields as subdomain LP)
+        // Form submission (matching referral-for-senior-counseling-questions form)
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             var form = this;
@@ -1084,15 +1131,25 @@
             errorDiv.textContent = '';
             form.querySelectorAll('.field-error').forEach(function(el) { el.classList.remove('field-error'); });
 
-            ['first_name','last_name','email','phone'].forEach(function(n) {
+            // Validate text fields
+            ['first_name','last_name','email','phone','message'].forEach(function(n) {
                 var f = form.querySelector('[name="'+n+'"]');
                 if (f && !f.value.trim()) { f.classList.add('field-error'); valid = false; }
             });
             var em = form.querySelector('[name="email"]');
             if (em && em.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)) { em.classList.add('field-error'); valid = false; }
 
-            var mc = form.querySelector('[name="medicare_coverage"]');
+            // Validate checkboxes
+            var cb1 = form.querySelector('[name="requiredcheckbox"]');
+            if (cb1 && !cb1.checked) { cb1.classList.add('field-error'); valid = false; }
+            var cb2 = form.querySelector('[name="requiredcheckbox3"]');
+            if (cb2 && !cb2.checked) { cb2.classList.add('field-error'); valid = false; }
+
+            // Validate dropdowns
+            var mc = form.querySelector('[name="medicaretype"]');
             if (!mc.value) { mc.classList.add('field-error'); valid = false; }
+            var ct = form.querySelector('[name="contacttimes"]');
+            if (!ct.value) { ct.classList.add('field-error'); valid = false; }
 
             if (!valid) { errorDiv.textContent = 'Please complete all required fields.'; return; }
 
@@ -1112,7 +1169,11 @@
                     last_name: form.querySelector('[name="last_name"]').value.trim(),
                     email: form.querySelector('[name="email"]').value.trim(),
                     phone: form.querySelector('[name="phone"]').value.trim(),
-                    medicare_coverage: mc.value
+                    message: form.querySelector('[name="message"]').value.trim(),
+                    requiredcheckbox: cb1.checked ? 'Yes' : 'No',
+                    requiredcheckbox3: cb2.checked ? 'Yes' : 'No',
+                    medicaretype: mc.value,
+                    contacttimes: ct.value
                 },
                 page_url: window.location.href,
                 referrer: document.referrer || '',
@@ -1133,7 +1194,7 @@
             .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
             .then(function() {
                 if (typeof dataLayer !== 'undefined') {
-                    dataLayer.push({ 'event': 'form_submission', 'form_name': 'eligibility_check' });
+                    dataLayer.push({ 'event': 'form_submission', 'form_name': 'referral_questions' });
                 }
                 document.getElementById('form-state').style.display = 'none';
                 document.getElementById('thank-you-state').classList.add('visible');
