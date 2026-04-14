@@ -327,6 +327,13 @@
         .qualifying-question label { font-size: 14px; margin-bottom: 10px; }
 
         .field-error { border-color: var(--error) !important; }
+        .field-help {
+            min-height: 18px;
+            margin-top: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--error);
+        }
         .form-error-msg {
             color: var(--error);
             font-size: 13px;
@@ -863,7 +870,8 @@
 
                         <div class="form-group">
                             <label for="phone">Phone Number <span class="req">*</span></label>
-                            <input type="tel" id="phone" name="phone" placeholder="Phone*" required inputmode="tel" autocomplete="tel" minlength="10" pattern="^\\+?[0-9().\\s-]{10,}$" aria-describedby="form-error">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone*" required inputmode="numeric" autocomplete="tel" minlength="14" maxlength="14" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}" title="Enter a 10-digit phone number" aria-describedby="phone-error form-error">
+                            <div class="field-help" id="phone-error" aria-live="polite"></div>
                         </div>
 
                         <div class="form-group">
@@ -1147,6 +1155,40 @@
             }
         })();
 
+        function getPhoneDigits(value) {
+            return (value || '').replace(/\D/g, '').slice(0, 10);
+        }
+
+        function formatPhone(value) {
+            var digits = getPhoneDigits(value);
+            if (digits.length <= 3) return digits;
+            if (digits.length <= 6) return '(' + digits.slice(0, 3) + ') ' + digits.slice(3);
+            return '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6);
+        }
+
+        function validatePhoneField(showMessage) {
+            var phoneField = document.getElementById('phone');
+            var phoneError = document.getElementById('phone-error');
+            var digits = getPhoneDigits(phoneField.value);
+            phoneField.value = formatPhone(phoneField.value);
+
+            if (digits.length !== 10) {
+                phoneField.classList.add('field-error');
+                phoneField.setCustomValidity('Enter a valid 10-digit phone number.');
+                if (showMessage) phoneError.textContent = 'Enter a valid 10-digit phone number.';
+                return false;
+            }
+
+            phoneField.classList.remove('field-error');
+            phoneField.setCustomValidity('');
+            phoneError.textContent = '';
+            return true;
+        }
+
+        var phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function() { validatePhoneField(false); });
+        phoneInput.addEventListener('blur', function() { validatePhoneField(true); });
+
         // Form submission (matching referral-for-senior-counseling-questions form)
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -1167,9 +1209,8 @@
             if (em && em.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)) { em.classList.add('field-error'); valid = false; }
 
             var phoneField = form.querySelector('[name="phone"]');
-            var phoneDigits = phoneField ? phoneField.value.replace(/\D/g, '') : '';
-            if (!phoneDigits || phoneDigits.length < 10 || phoneDigits.length > 15) {
-                phoneField.classList.add('field-error');
+            var phoneDigits = getPhoneDigits(phoneField.value);
+            if (!validatePhoneField(true)) {
                 valid = false;
             }
 
@@ -1202,7 +1243,7 @@
                     first_name: form.querySelector('[name="first_name"]').value.trim(),
                     last_name: form.querySelector('[name="last_name"]').value.trim(),
                     email: form.querySelector('[name="email"]').value.trim(),
-                    phone: form.querySelector('[name="phone"]').value.trim(),
+                    phone: phoneDigits,
                     message: form.querySelector('[name="message"]').value.trim(),
                     requiredcheckbox: cb1.checked ? 'Yes' : 'No',
                     requiredcheckbox3: cb2.checked ? 'Yes' : 'No',
