@@ -863,7 +863,7 @@
 
                         <div class="form-group">
                             <label for="phone">Phone Number <span class="req">*</span></label>
-                            <input type="tel" id="phone" name="phone" placeholder="Phone*" required>
+                            <input type="tel" id="phone" name="phone" placeholder="Phone*" required inputmode="tel" autocomplete="tel" minlength="10" pattern="^\\+?[0-9().\\s-]{10,}$" aria-describedby="form-error">
                         </div>
 
                         <div class="form-group">
@@ -1166,6 +1166,13 @@
             var em = form.querySelector('[name="email"]');
             if (em && em.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)) { em.classList.add('field-error'); valid = false; }
 
+            var phoneField = form.querySelector('[name="phone"]');
+            var phoneDigits = phoneField ? phoneField.value.replace(/\D/g, '') : '';
+            if (!phoneDigits || phoneDigits.length < 10 || phoneDigits.length > 15) {
+                phoneField.classList.add('field-error');
+                valid = false;
+            }
+
             // Validate checkboxes
             var cb1 = form.querySelector('[name="requiredcheckbox"]');
             if (cb1 && !cb1.checked) { cb1.classList.add('field-error'); valid = false; }
@@ -1178,7 +1185,7 @@
             var ct = form.querySelector('[name="contacttimes"]');
             if (!ct.value) { ct.classList.add('field-error'); valid = false; }
 
-            if (!valid) { errorDiv.textContent = 'Please complete all required fields.'; return; }
+            if (!valid) { errorDiv.textContent = 'Please complete all required fields and enter a valid phone number.'; return; }
 
             if (btn.disabled) return;
             btn.disabled = true;
