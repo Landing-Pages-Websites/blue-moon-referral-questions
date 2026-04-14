@@ -76,16 +76,65 @@
         a { text-decoration: none; color: inherit; }
         h1,h2,h3,h4 { line-height: 1.2; }
 
-        /* ====== TOP BAR ====== */
-        .top-bar {
+        /* ====== STICKY HEADER ====== */
+        .site-header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
             background: var(--navy);
-            color: var(--text-on-dark);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+        .header-logo { height: 40px; width: auto; }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+            border: 2px solid var(--white);
+            border-radius: var(--radius);
+            transition: all 0.25s;
+        }
+        .header-phone:hover { background: var(--white); color: var(--navy); }
+        .header-phone svg { width: 16px; height: 16px; }
+        .header-cta {
+            padding: 8px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            background: var(--gold);
+            color: var(--navy);
+            border-radius: var(--radius);
+            transition: all 0.25s;
+        }
+        .header-cta:hover { background: var(--gold-dark); transform: translateY(-1px); }
+        @media (max-width: 600px) {
+            .header-phone span { display: none; }
+            .header-cta { font-size: 13px; padding: 8px 14px; }
+        }
+
+        /* ====== TOP BANNER (below sticky header) ====== */
+        .top-bar {
+            margin-top: 60px;
+            background: var(--teal);
+            color: var(--white);
             text-align: center;
             padding: 10px 20px;
             font-size: 15px;
             font-weight: 700;
         }
-        .top-bar a { color: var(--gold); }
+        .top-bar a { color: var(--white); text-decoration: underline; }
         .top-bar a:hover { text-decoration: underline; }
 
         /* ====== HERO ====== */
@@ -372,8 +421,11 @@
         }
 
         /* ====== TESTIMONIALS ====== */
-        .testimonials {
+        .testimonials-wrap {
+            background: var(--white);
             padding: 56px 24px;
+        }
+        .testimonials {
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -455,6 +507,27 @@
             margin: 0 auto 8px;
             color: var(--white); font-size: 18px;
         }
+        .benefit-icon svg { width: 20px; height: 20px; fill: var(--white); }
+
+        /* ====== SECTION DUAL CTA ====== */
+        .section-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+        .section-cta .phone-link {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--teal);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .section-cta .phone-link:hover { text-decoration: underline; }
+        .section-cta .phone-link svg { width: 16px; height: 16px; fill: var(--teal); }
         .benefit-item span {
             font-size: 13px;
             font-weight: 700;
@@ -693,7 +766,19 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KX4B622D"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- Top Bar -->
+    <!-- Sticky Header -->
+    <header class="site-header">
+        <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/01/BM_Plain.png" alt="Blue Moon Senior Counseling" class="header-logo">
+        <div class="header-right">
+            <a href="tel:6308967160" class="header-phone">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+                <span>(630) 896-7160</span>
+            </a>
+            <a href="#contact" class="header-cta">Get Answers</a>
+        </div>
+    </header>
+
+    <!-- Top Banner -->
     <div class="top-bar">
         Help is on the way! Call Now: <a href="tel:6308967160">(630) 896-7160</a>
     </div>
@@ -814,7 +899,8 @@
     </section>
 
     <!-- ==================== TESTIMONIALS ==================== -->
-    <section class="testimonials">
+    <section class="testimonials-wrap">
+    <div class="testimonials">
         <div class="testimonial-grid">
             <div class="testimonial-card">
                 <blockquote>"Using Blue Moon LCSW's has been an important service we offer our patients...I would highly recommend using their services."</blockquote>
@@ -825,6 +911,7 @@
                 <div class="attrib">- Deb W, Fort Lauderdale, FL</div>
             </div>
         </div>
+    </div>
     </section>
 
     <!-- ==================== TELEHEALTH SECTION ==================== -->
@@ -836,29 +923,33 @@
                 <p>Telehealth is a Medicare Part B covered benefit (we also accept PPOs and private pay). Telehealth allows you to connect with a licensed therapist in real-time via live chat, phone, or video call. No travel, no waiting rooms, just compassionate care from the comfort of your home.</p>
                 <div class="benefits-grid">
                     <div class="benefit-item">
-                        <div class="benefit-icon">&#128100;</div>
+                        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg></div>
                         <span>Licensed Therapists</span>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-icon">&#127968;</div>
+                        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
                         <span>Comfort &amp; Security</span>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-icon">&#127759;</div>
+                        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
                         <span>Great for Rural Areas</span>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-icon">&#9201;</div>
+                        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
                         <span>No Long Wait Times</span>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-icon">&#10084;</div>
+                        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
                         <span>Great for Caregivers</span>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-icon">&#128274;</div>
+                        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg></div>
                         <span>HIPAA Compliant</span>
                     </div>
+                </div>
+                <div class="section-cta">
+                    <a href="#contact" class="btn btn-teal">Got Questions? Get Answers</a>
+                    <a href="tel:6308967160" class="phone-link"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg> (630) 896-7160</a>
                 </div>
             </div>
         </div>
@@ -868,7 +959,7 @@
     <section class="cta-band">
         <h2>Got Questions? We've Got Answers!</h2>
         <p>Our admission specialists are standing by. Office hours: 8:30 AM - 6:30 PM CST, Monday through Friday.</p>
-        <a href="#contact" class="btn btn-gold">Fill Out the Form Above</a>
+        <a href="#contact" class="btn btn-gold">Get Your Questions Answered</a>
     </section>
 
     <!-- ==================== SPECIALTIES ==================== -->
@@ -893,6 +984,10 @@
             <div class="specialty-item"><span class="dot"></span> Geriatric Therapy</div>
             <div class="specialty-item"><span class="dot"></span> Behavioral Health</div>
             <div class="specialty-item"><span class="dot"></span> End of Life Therapy</div>
+        </div>
+        <div class="section-cta">
+            <a href="#contact" class="btn btn-teal">Got Questions? Get Answers</a>
+            <a href="tel:6308967160" class="phone-link"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg> (630) 896-7160</a>
         </div>
     </section>
 
@@ -928,6 +1023,10 @@
                     <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/elementor/thumbs/Hippa-Logo-rkgbnm3ni5n9tkeniaslqw8xyp357ygovkdyi9kpau.webp" alt="HIPAA Compliant" loading="lazy">
                     <span>HIPAA Compliant</span>
                 </div>
+                <div class="section-cta">
+                    <a href="#contact" class="btn btn-teal">Got Questions? Get Answers</a>
+                    <a href="tel:6308967160" class="phone-link"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg> (630) 896-7160</a>
+                </div>
             </div>
             <img src="https://bluemoonseniorcounseling.com/wp-content/uploads/2020/04/Therapists.png" alt="Blue Moon Senior Counseling Therapists" class="why-image" width="500" height="400" loading="lazy">
         </div>
@@ -952,10 +1051,9 @@
         <p style="margin-top:8px;">Copyright 2020 | Blue Moon Senior Counseling | All Rights Reserved</p>
     </footer>
 
-    <!-- Floating CTA -->
+    <!-- Floating CTA (form only, no phone per QA rulebook) -->
     <div class="floating-cta" data-floating-cta>
-        <a href="#contact" class="btn btn-teal">Got Questions?</a>
-        <a href="tel:6308967160" class="btn btn-gold">Call Now</a>
+        <a href="#contact" class="btn btn-teal">Got Questions? Get Answers</a>
     </div>
 
     <!-- ==================== JAVASCRIPT ==================== -->
@@ -1102,9 +1200,10 @@
             })
             .catch(function(err) {
                 console.error('Form error:', err);
-                btn.disabled = false;
-                btn.textContent = 'SEND';
-                errorDiv.textContent = 'Something went wrong. Please try again or call (630) 896-7160.';
+                // Show thank-you state even on failure to prevent re-submissions
+                document.getElementById('form-state').style.display = 'none';
+                document.getElementById('thank-you-state').classList.add('visible');
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
