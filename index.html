@@ -1355,5 +1355,30 @@
             });
         });
     </script>
+
+    <script>
+        // Hero image CORS guard. Third-party scripts add crossorigin="anonymous"
+        // to cross-origin images after load. The hero image host does not return
+        // an Access-Control-Allow-Origin header, so a CORS request fails and the
+        // two hero images render blank (naturalWidth 0). Strip any injected
+        // crossorigin from only these two elements and re-fetch them as ordinary
+        // non-CORS images, both now and whenever it is added again.
+        (function() {
+            var heroImgs = document.querySelectorAll('img.hero-logo, img.hero-betty');
+            if (!heroImgs.length) return;
+            function fix(img) {
+                img.removeAttribute('crossorigin');
+                try { img.crossOrigin = null; } catch (e) {}
+                var src = img.getAttribute('src');
+                if (src) { img.removeAttribute('src'); img.setAttribute('src', src); }
+            }
+            heroImgs.forEach(function(img) {
+                if (img.hasAttribute('crossorigin') || img.crossOrigin) fix(img);
+                new MutationObserver(function() {
+                    if (img.hasAttribute('crossorigin')) fix(img);
+                }).observe(img, { attributes: true, attributeFilter: ['crossorigin'] });
+            });
+        })();
+    </script>
 </body>
 </html>
