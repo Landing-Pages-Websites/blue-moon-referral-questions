@@ -697,6 +697,9 @@
             gap: 48px;
             align-items: center;
         }
+        .why-content {
+            min-width: 0;
+        }
         .why-content h2 {
             font-size: clamp(28px, 4vw, 38px);
             font-weight: 800;
@@ -764,6 +767,10 @@
 
         @media (max-width: 900px) {
             .why-inner { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .why-stats { gap: 12px; }
+            .stat-box { flex: 1 1 0; min-width: 0; padding: 16px 10px; }
         }
 
         /* ====== BOTTOM CTA ====== */
