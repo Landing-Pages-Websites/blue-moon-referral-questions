@@ -844,6 +844,69 @@
             .floating-cta .btn { width: 100%; text-align: center; padding: 14px; }
         }
 
+        /* In-hero mobile CTA (hidden on desktop; shown only on phones) */
+        .hero-mobile-cta { display: none; }
+
+        /* ====== MOBILE (phones): form-first hero + docked sticky submit ======
+           Reorders the hero so the existing #contact form sits directly after an
+           in-hero "Get Answers" CTA and begins inside the first viewport, and
+           bounds the form into an internal scroll flow so #lead-submit can dock
+           at the bottom via position: sticky. Desktop layout is untouched. */
+        @media (max-width: 600px) {
+            .hero { padding: 14px 16px 32px; }
+            .hero-inner { display: flex; flex-direction: column; }
+            .hero-left { display: contents; }
+            .hero-logo     { order: 1; width: 128px; margin-bottom: 8px; }
+            .hero-eyebrow  { order: 2; margin-bottom: 10px; }
+            .hero h1       { order: 3; font-size: 25px; margin-bottom: 8px; }
+            .hero-subtitle { order: 4; font-size: 14px; line-height: 1.45; margin-bottom: 0; }
+            .hero-mobile-cta { order: 5; display: block; width: 100%; margin: 12px 0 0; padding: 12px 24px; }
+            .form-card     { order: 6; margin-top: 14px; scroll-margin-top: 72px; }
+            .hero-badges   { order: 7; margin-top: 28px; }
+            .hero-betty    { order: 8; }
+            /* Anchor target sits below the fixed header when navigated to */
+            #contact { scroll-margin-top: 72px; }
+
+            /* Bounded internal scroll flow: the form scrolls inside a capped card
+               so the existing submit can dock at the bottom and stay in view when
+               the visitor navigates to the form. */
+            .form-card {
+                display: flex;
+                flex-direction: column;
+                max-height: calc(100dvh - 88px);
+                padding: 16px 16px 12px;
+            }
+            .form-card h2 { font-size: 18px; margin-bottom: 12px; }
+            #form-state {
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 auto;
+                min-height: 0;
+                overflow: hidden;
+            }
+            #contact-form {
+                flex: 1 1 auto;
+                min-height: 0;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-padding-bottom: 104px;
+            }
+            /* Opaque dock keeps the existing gold submit visible while fields scroll;
+               a navy hairline + soft upward shadow reads as an intentional toolbar. */
+            .submit-dock {
+                position: sticky;
+                bottom: 0;
+                z-index: 2;
+                background: var(--white);
+                margin: 0 -16px;
+                padding: 12px 16px 4px;
+                border-top: 1px solid rgba(18,16,66,0.08);
+                box-shadow: 0 -8px 16px -10px rgba(18,16,66,0.18);
+            }
+            .submit-dock .form-error-msg { margin-bottom: 8px; }
+            .form-note { margin: 10px 0 0; }
+        }
+
         /* Accessibility */
         *:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
         .sr-only {
@@ -883,6 +946,7 @@
                 <span class="hero-eyebrow">Help is on the way!</span>
                 <h1>Senior Counseling from the <em>Comfort of Your Home</em></h1>
                 <p class="hero-subtitle">Tele-Therapy Services. Beneficial for both seniors and caregivers. Medicare beneficiaries don't need a doctor's referral.</p>
+                <a href="#contact" class="hero-mobile-cta btn btn-gold">Get Answers</a>
                 <div class="hero-badges">
                     <div class="hero-badge"><span class="icon">&#10004;</span> Covered by Medicare</div>
                     <div class="hero-badge"><span class="icon">&#9742;</span> Phone / Video / Chat</div>
@@ -954,10 +1018,12 @@
                             </select>
                         </div>
 
-                        <div class="form-error-msg" id="form-error" role="alert" aria-live="polite"></div>
-                        <button type="submit" class="form-submit" id="lead-submit">SEND</button>
-                        <p class="form-note">By submitting this form, you agree to be contacted by Blue Moon Senior Counseling. Your information is kept confidential.</p>
+                        <div class="submit-dock">
+                            <div class="form-error-msg" id="form-error" role="alert" aria-live="polite"></div>
+                            <button type="submit" class="form-submit" id="lead-submit">SEND</button>
+                        </div>
                     </form>
+                    <p class="form-note">By submitting this form, you agree to be contacted by Blue Moon Senior Counseling. Your information is kept confidential.</p>
                 </div>
 
                 <!-- Thank You State -->
